@@ -637,6 +637,41 @@ namespace Распределение_нагрузки
             }
         }
 
+        private void всеПредметыButton_Click(object sender, EventArgs e)
+        {
+            preparationCheckBox.Checked = false;
+            направлениеCheckBox.Checked = false;
+            languageCheckBox.Checked = false;
+            nesessaryCheckBox.Checked = false;
+            semesterCheckBox.Checked = false;
+            subjectCheckBox.Checked = false;
+            typeCheckBox.Checked = false;
+
+            RefreshTable(teacherID);
+            //using (var MyConnection = new SqlConnection(Connection.LoadConnectionString))
+            //{
+            //    try
+            //    {
+            //        //Вызов хранимой процедуры
+            //        SqlCommand teachersProcedure = new SqlCommand("ПреподавательВсеПредметы_ХП", MyConnection);
+            //        teachersProcedure.CommandType = CommandType.StoredProcedure;
+            //        teachersProcedure.Parameters.AddWithValue("@ID", teacherID);
+
+            //        MyConnection.Open();
+            //        teachersProcedure.ExecuteNonQuery();
+
+            //        DataTable dt = new DataTable();
+            //        dt.Load(teachersProcedure.ExecuteReader());
+            //        dataGridView1.DataSource = dt.DefaultView;
+            //        dataGridView1.Columns[0].Visible = false;
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message);
+            //    }
+            //}
+        }
+
         private void preparationCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             RefreshTable(teacherID);
@@ -675,32 +710,6 @@ namespace Распределение_нагрузки
         private void typeCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             RefreshTable(teacherID);
-        }
-
-        private void всеПредметыButton_Click(object sender, EventArgs e)
-        {
-            using (var MyConnection = new SqlConnection(Connection.LoadConnectionString))
-            {
-                try
-                {
-                    //Вызов хранимой процедуры
-                    SqlCommand teachersProcedure = new SqlCommand("ПреподавательВсеПредметы_ХП", MyConnection);
-                    teachersProcedure.CommandType = CommandType.StoredProcedure;
-                    teachersProcedure.Parameters.AddWithValue("@ID", teacherID);
-
-                    MyConnection.Open();
-                    teachersProcedure.ExecuteNonQuery();
-
-                    DataTable dt = new DataTable();
-                    dt.Load(teachersProcedure.ExecuteReader());
-                    dataGridView1.DataSource = dt.DefaultView;
-                    dataGridView1.Columns[0].Visible = false;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -864,14 +873,14 @@ namespace Распределение_нагрузки
             if (string.IsNullOrEmpty(ФИОTextBox.Text))
             {
                 MessageBox.Show("Введите ФИО");
-                ready = false;
+                return false;
             }
 
             if (string.IsNullOrEmpty(ставкаTextBox.Text))
             {
-                MessageBox.Show("Укажите ставку");
-                ready = false;
+                MessageBox.Show("Укажите ставку");               
                 rate = 0;
+                return false;
             }
             else
             {
@@ -896,10 +905,16 @@ namespace Распределение_нагрузки
                 rateContract = 0;
             }
 
+            if (rate > 1.75)
+            {
+                MessageBox.Show("Общая ставка не может превышать 1,75", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
             if ((rateBudget + rateContract) != rate)
             {
                 MessageBox.Show("Сумма ставок (бюджет + контракт) не совпадает с общей. Проверьте значения", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ready = false;
+                return false;
             }
             return ready;
         }
@@ -921,6 +936,17 @@ namespace Распределение_нагрузки
             RefreshTable(teacherID);
             UpdateSubjectComboBox();
             видЗанятияComboBox_SelectedIndexChanged(sender, e);
+            if (семестрComboBox.SelectedIndex == 0)
+            {
+                checkBox1.Enabled = false;
+                checkBox2.Enabled = false;
+                checkBox4.Enabled = false;
+                checkBox5.Enabled = false;
+                checkBox6.Enabled = false;
+                checkBox7.Enabled = false;
+                checkBox8.Enabled = false;
+                checkBox9.Enabled = false;
+            }
         }
 
         private void важностьComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -1151,7 +1177,7 @@ namespace Распределение_нагрузки
 
                     ФИОTextBox.Text = getSecondName.ExecuteScalar().ToString() + " " + getName.ExecuteScalar().ToString() + " " + getThirdName.ExecuteScalar().ToString();
                     началоТДdateTimePicker1.Text = getStartDate.ExecuteScalar().ToString();
-                    должностьComboBox.SelectedIndex = posID - 1;
+                    должностьComboBox.SelectedValue = posID;
                     ставкаTextBox.Text = getRate.ExecuteScalar().ToString();
                     ставкаБюджетTextBox.Text = getRateBudget.ExecuteScalar().ToString();
                     ставкаКонтрактTextBox.Text = getRateContract.ExecuteScalar().ToString();

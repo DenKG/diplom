@@ -96,5 +96,17 @@ namespace Распределение_нагрузки
             }
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Нагрузка_кафедры нагрузка_Кафедры = new Нагрузка_кафедры();
+            нагрузка_Кафедры.Show();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            InitialData.Справочники справочники = new InitialData.Справочники();
+            справочники.Show();
+        }
     }
 }

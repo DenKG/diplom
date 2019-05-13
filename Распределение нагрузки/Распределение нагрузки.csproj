@@ -51,7 +51,7 @@
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -80,6 +80,12 @@
     </Compile>
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitialData\Справочники.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialData\Справочники.Designer.cs">
+      <DependentUpon>Справочники.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Бакалавры.cs">
@@ -126,6 +132,12 @@
     <Compile Include="InitialData\Преподаватели.Designer.cs">
       <DependentUpon>Преподаватели.cs</DependentUpon>
     </Compile>
+    <Compile Include="Нагрузка кафедры.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Нагрузка кафедры.Designer.cs">
+      <DependentUpon>Нагрузка кафедры.cs</DependentUpon>
+    </Compile>
     <Compile Include="Преподаватели для лабораторных.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +169,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialData\Справочники.resx">
+      <DependentUpon>Справочники.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc">
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="Бакалавры.rdlc" />
@@ -191,6 +209,10 @@
     <EmbeddedResource Include="InitialData\Преподаватели.resx">
       <DependentUpon>Преподаватели.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Нагрузка кафедры.resx">
+      <DependentUpon>Нагрузка кафедры.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="НагрузкаКафедры.rdlc" />
     <EmbeddedResource Include="Общая нагрузка.rdlc" />
     <EmbeddedResource Include="Преподаватели для лабораторных.resx">
       <DependentUpon>Преподаватели для лабораторных.cs</DependentUpon>
@@ -231,6 +253,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Предупреждение_треугольник_иконка.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -81,7 +81,7 @@ namespace Распределение_нагрузки
                     группаTextBox.Text = getName.ExecuteScalar().ToString();
                     количествоСтудентовTextBox.Text = getQuantity.ExecuteScalar().ToString();
                     годПоступленияTextBox.Text = getYear.ExecuteScalar().ToString();
-                    курсComboBox.SelectedIndex =  course - 1;
+                    курсTextBox.Text = course.ToString();
                     направлениеComboBox.SelectedValue = getDirectionID.ExecuteScalar();
                     языкComboBox.SelectedValue = getLanguageID.ExecuteScalar();
                     уровеньПодготовкиComboBox.SelectedValue = getPreparationID.ExecuteScalar();
@@ -119,7 +119,7 @@ namespace Распределение_нагрузки
                             addGroup.Parameters.AddWithValue("@studQuant", Convert.ToInt32(количествоСтудентовTextBox.Text));
                             addGroup.Parameters.AddWithValue("@language", Convert.ToInt32(языкComboBox.SelectedValue));
                             addGroup.Parameters.AddWithValue("@year", Convert.ToInt32(годПоступленияTextBox.Text));
-                            addGroup.Parameters.AddWithValue("@course", Convert.ToInt32(курсComboBox.SelectedIndex + 1));
+                            addGroup.Parameters.AddWithValue("@course", Convert.ToInt32(годПоступленияTextBox.Text) - DateTime.Now.Year);
                             addGroup.Parameters.AddWithValue("@preparation", Convert.ToInt32(уровеньПодготовкиComboBox.SelectedValue));
                             addGroup.Parameters.AddWithValue("@budget", Convert.ToInt32(количествоБюджетниковTextBox.Text));
                             addGroup.Parameters.AddWithValue("@contract", Convert.ToInt32(количествоКонтрактниковTextBox.Text));
@@ -135,7 +135,7 @@ namespace Распределение_нагрузки
                             количествоСтудентовTextBox.Enabled = false;
                             языкComboBox.Enabled = false;
                             годПоступленияTextBox.Enabled = false;
-                            курсComboBox.Enabled = false;
+                            //курсComboBox.Enabled = false;
                             уровеньПодготовкиComboBox.Enabled = false;
                             группаTextBox.Enabled = false;
                             сохранитьГруппуButton.Enabled = false;
@@ -168,7 +168,7 @@ namespace Распределение_нагрузки
                             addGroup.Parameters.AddWithValue("@studQuant", Convert.ToInt32(количествоСтудентовTextBox.Text));
                             addGroup.Parameters.AddWithValue("@language", Convert.ToInt32(языкComboBox.SelectedValue));
                             addGroup.Parameters.AddWithValue("@year", Convert.ToInt32(годПоступленияTextBox.Text));
-                            addGroup.Parameters.AddWithValue("@course", Convert.ToInt32(курсComboBox.SelectedIndex + 1));
+                            addGroup.Parameters.AddWithValue("@course", Convert.ToInt32(годПоступленияTextBox.Text) - DateTime.Now.Year);
                             addGroup.Parameters.AddWithValue("@preparation", Convert.ToInt32(уровеньПодготовкиComboBox.SelectedValue));
                             addGroup.Parameters.AddWithValue("@budget", Convert.ToInt32(количествоБюджетниковTextBox.Text));
                             addGroup.Parameters.AddWithValue("@contract", Convert.ToInt32(количествоКонтрактниковTextBox.Text));
@@ -185,7 +185,7 @@ namespace Распределение_нагрузки
                             количествоСтудентовTextBox.Enabled = false;
                             языкComboBox.Enabled = false;
                             годПоступленияTextBox.Enabled = false;
-                            курсComboBox.Enabled = false;
+                            //курсComboBox.Enabled = false;
                             уровеньПодготовкиComboBox.Enabled = false;
                             группаTextBox.Enabled = false;
                             сохранитьГруппуButton.Enabled = false;
@@ -307,7 +307,7 @@ namespace Распределение_нагрузки
             количествоСтудентовTextBox.Enabled = true;
             языкComboBox.Enabled = true;
             годПоступленияTextBox.Enabled = true;
-            курсComboBox.Enabled = true;
+            //курсComboBox.Enabled = true;
             уровеньПодготовкиComboBox.Enabled = true;
             группаTextBox.Enabled = true;
             сохранитьГруппуButton.Enabled = true;
@@ -354,7 +354,7 @@ namespace Распределение_нагрузки
             количествоСтудентовTextBox.Enabled = false;
             языкComboBox.Enabled = false;
             годПоступленияTextBox.Enabled = false;
-            курсComboBox.Enabled = false;
+            //курсComboBox.Enabled = false;
             уровеньПодготовкиComboBox.Enabled = false;
             группаTextBox.Enabled = false;
             сохранитьГруппуButton.Enabled = false;
@@ -536,7 +536,7 @@ namespace Распределение_нагрузки
             количествоСтудентовTextBox.Text = "";
             языкComboBox.SelectedValue = 1;
             годПоступленияTextBox.Text = "";
-            курсComboBox.SelectedIndex = 0;
+            //курсComboBox.SelectedIndex = 0;
             уровеньПодготовкиComboBox.SelectedValue = 1;
             группаTextBox.Text = "";
             количествоБюджетниковTextBox.Text = "";
@@ -546,7 +546,7 @@ namespace Распределение_нагрузки
             количествоСтудентовTextBox.Enabled = true;
             языкComboBox.Enabled = true;
             годПоступленияTextBox.Enabled = true;
-            курсComboBox.Enabled = true;
+            //курсComboBox.Enabled = true;
             уровеньПодготовкиComboBox.Enabled = true;
             группаTextBox.Enabled = true;
             сохранитьГруппуButton.Enabled = true;

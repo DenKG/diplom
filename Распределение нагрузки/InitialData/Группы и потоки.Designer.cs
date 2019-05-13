@@ -60,8 +60,6 @@
             this.количествоБюджетниковTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.курсComboBox = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.группаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.уровеньподготовкиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -108,6 +106,8 @@
             this.показатьПотокиХПBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.показатьПотоки_ХПTableAdapter = new Распределение_нагрузки.РаспределениеНагрузкиDataSetTableAdapters.ПоказатьПотоки_ХПTableAdapter();
             this.группыBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.курсTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.уровниподготовкиBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.распределениеНагрузкиDataSet)).BeginInit();
@@ -328,12 +328,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.курсTextBox);
             this.groupBox1.Controls.Add(this.отменаButton);
             this.groupBox1.Controls.Add(this.количествоКонтрактниковTextBox);
             this.groupBox1.Controls.Add(this.количествоБюджетниковTextBox);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.курсComboBox);
             this.groupBox1.Controls.Add(this.языкComboBox);
             this.groupBox1.Controls.Add(this.количествоСтудентовTextBox);
             this.groupBox1.Controls.Add(this.группаTextBox);
@@ -401,31 +401,6 @@
             this.label9.Size = new System.Drawing.Size(83, 13);
             this.label9.TabIndex = 18;
             this.label9.Text = "Кол-во бюджет";
-            // 
-            // курсComboBox
-            // 
-            this.курсComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.курсComboBox.Enabled = false;
-            this.курсComboBox.FormattingEnabled = true;
-            this.курсComboBox.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.курсComboBox.Location = new System.Drawing.Point(133, 66);
-            this.курсComboBox.Name = "курсComboBox";
-            this.курсComboBox.Size = new System.Drawing.Size(100, 21);
-            this.курсComboBox.TabIndex = 17;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(96, 69);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 13);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Курс";
             // 
             // dataGridView1
             // 
@@ -835,6 +810,23 @@
             this.группыBindingSource1.DataMember = "Группы";
             this.группыBindingSource1.DataSource = this.распределениеНагрузкиDataSet;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(96, 69);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Курс";
+            // 
+            // курсTextBox
+            // 
+            this.курсTextBox.Location = new System.Drawing.Point(133, 67);
+            this.курсTextBox.Name = "курсTextBox";
+            this.курсTextBox.ReadOnly = true;
+            this.курсTextBox.Size = new System.Drawing.Size(100, 20);
+            this.курсTextBox.TabIndex = 24;
+            // 
             // Группы
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -919,8 +911,6 @@
         private System.Windows.Forms.Button редактироватьГруппуButton;
         private System.Windows.Forms.Button добавитьГруппуButton;
         private System.Windows.Forms.Button отменаButton;
-        private System.Windows.Forms.ComboBox курсComboBox;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewTextBoxColumn группаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn уровеньподготовкиDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn годпоступленияDataGridViewTextBoxColumn;
@@ -962,5 +952,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn количествоDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewButtonColumn Удалить;
         private System.Windows.Forms.BindingSource группыBindingSource1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox курсTextBox;
     }
 }
