@@ -55,11 +55,13 @@
             this.направленияTableAdapter = new Распределение_нагрузки.РаспределениеНагрузкиDataSetTableAdapters.НаправленияTableAdapter();
             this.сохранитьГруппуButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.курсTextBox = new System.Windows.Forms.TextBox();
             this.отменаButton = new System.Windows.Forms.Button();
             this.количествоКонтрактниковTextBox = new System.Windows.Forms.TextBox();
             this.количествоБюджетниковTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.группаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.уровеньподготовкиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -106,8 +108,6 @@
             this.показатьПотокиХПBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.показатьПотоки_ХПTableAdapter = new Распределение_нагрузки.РаспределениеНагрузкиDataSetTableAdapters.ПоказатьПотоки_ХПTableAdapter();
             this.группыBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.label7 = new System.Windows.Forms.Label();
-            this.курсTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.уровниподготовкиBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.распределениеНагрузкиDataSet)).BeginInit();
@@ -221,6 +221,7 @@
             this.группаTextBox.Enabled = false;
             this.группаTextBox.Location = new System.Drawing.Point(133, 15);
             this.группаTextBox.Name = "группаTextBox";
+            this.группаTextBox.ReadOnly = true;
             this.группаTextBox.Size = new System.Drawing.Size(100, 20);
             this.группаTextBox.TabIndex = 8;
             this.группаTextBox.Leave += new System.EventHandler(this.группаTextBox_Leave);
@@ -355,6 +356,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Группы";
             // 
+            // курсTextBox
+            // 
+            this.курсTextBox.Location = new System.Drawing.Point(133, 67);
+            this.курсTextBox.Name = "курсTextBox";
+            this.курсTextBox.ReadOnly = true;
+            this.курсTextBox.Size = new System.Drawing.Size(100, 20);
+            this.курсTextBox.TabIndex = 24;
+            // 
             // отменаButton
             // 
             this.отменаButton.Enabled = false;
@@ -401,6 +410,15 @@
             this.label9.Size = new System.Drawing.Size(83, 13);
             this.label9.TabIndex = 18;
             this.label9.Text = "Кол-во бюджет";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(96, 69);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Курс";
             // 
             // dataGridView1
             // 
@@ -809,23 +827,6 @@
             // 
             this.группыBindingSource1.DataMember = "Группы";
             this.группыBindingSource1.DataSource = this.распределениеНагрузкиDataSet;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(96, 69);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 13);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Курс";
-            // 
-            // курсTextBox
-            // 
-            this.курсTextBox.Location = new System.Drawing.Point(133, 67);
-            this.курсTextBox.Name = "курсTextBox";
-            this.курсTextBox.ReadOnly = true;
-            this.курсTextBox.Size = new System.Drawing.Size(100, 20);
-            this.курсTextBox.TabIndex = 24;
             // 
             // Группы
             // 

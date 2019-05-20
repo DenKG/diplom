@@ -114,6 +114,10 @@ namespace Распределение_нагрузки {
         
         private ОтчетНагрузкаКафедры_ХПDataTable tableОтчетНагрузкаКафедры_ХП;
         
+        private ПоказатьАкадСоветников_ХПDataTable tableПоказатьАкадСоветников_ХП;
+        
+        private ОтчетПоПреподавателю_ХПDataTable tableОтчетПоПреподавателю_ХП;
+        
         private global::System.Data.DataRelation relationFK_Группы_Направления;
         
         private global::System.Data.DataRelation relationFK_Группы_Уровни_подготовки;
@@ -316,6 +320,12 @@ namespace Распределение_нагрузки {
                 }
                 if ((ds.Tables["ОтчетНагрузкаКафедры_ХП"] != null)) {
                     base.Tables.Add(new ОтчетНагрузкаКафедры_ХПDataTable(ds.Tables["ОтчетНагрузкаКафедры_ХП"]));
+                }
+                if ((ds.Tables["ПоказатьАкадСоветников_ХП"] != null)) {
+                    base.Tables.Add(new ПоказатьАкадСоветников_ХПDataTable(ds.Tables["ПоказатьАкадСоветников_ХП"]));
+                }
+                if ((ds.Tables["ОтчетПоПреподавателю_ХП"] != null)) {
+                    base.Tables.Add(new ОтчетПоПреподавателю_ХПDataTable(ds.Tables["ОтчетПоПреподавателю_ХП"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -787,6 +797,26 @@ namespace Распределение_нагрузки {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ПоказатьАкадСоветников_ХПDataTable ПоказатьАкадСоветников_ХП {
+            get {
+                return this.tableПоказатьАкадСоветников_ХП;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ОтчетПоПреподавателю_ХПDataTable ОтчетПоПреподавателю_ХП {
+            get {
+                return this.tableОтчетПоПреподавателю_ХП;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -986,6 +1016,12 @@ namespace Распределение_нагрузки {
                 }
                 if ((ds.Tables["ОтчетНагрузкаКафедры_ХП"] != null)) {
                     base.Tables.Add(new ОтчетНагрузкаКафедры_ХПDataTable(ds.Tables["ОтчетНагрузкаКафедры_ХП"]));
+                }
+                if ((ds.Tables["ПоказатьАкадСоветников_ХП"] != null)) {
+                    base.Tables.Add(new ПоказатьАкадСоветников_ХПDataTable(ds.Tables["ПоказатьАкадСоветников_ХП"]));
+                }
+                if ((ds.Tables["ОтчетПоПреподавателю_ХП"] != null)) {
+                    base.Tables.Add(new ОтчетПоПреподавателю_ХПDataTable(ds.Tables["ОтчетПоПреподавателю_ХП"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -1290,6 +1326,18 @@ namespace Распределение_нагрузки {
                     this.tableОтчетНагрузкаКафедры_ХП.InitVars();
                 }
             }
+            this.tableПоказатьАкадСоветников_ХП = ((ПоказатьАкадСоветников_ХПDataTable)(base.Tables["ПоказатьАкадСоветников_ХП"]));
+            if ((initTable == true)) {
+                if ((this.tableПоказатьАкадСоветников_ХП != null)) {
+                    this.tableПоказатьАкадСоветников_ХП.InitVars();
+                }
+            }
+            this.tableОтчетПоПреподавателю_ХП = ((ОтчетПоПреподавателю_ХПDataTable)(base.Tables["ОтчетПоПреподавателю_ХП"]));
+            if ((initTable == true)) {
+                if ((this.tableОтчетПоПреподавателю_ХП != null)) {
+                    this.tableОтчетПоПреподавателю_ХП.InitVars();
+                }
+            }
             this.relationFK_Группы_Направления = this.Relations["FK_Группы_Направления"];
             this.relationFK_Группы_Уровни_подготовки = this.Relations["FK_Группы_Уровни_подготовки"];
             this.relationFK_Группы_Языки = this.Relations["FK_Группы_Языки"];
@@ -1410,6 +1458,10 @@ namespace Распределение_нагрузки {
             base.Tables.Add(this.tableПотоки);
             this.tableОтчетНагрузкаКафедры_ХП = new ОтчетНагрузкаКафедры_ХПDataTable();
             base.Tables.Add(this.tableОтчетНагрузкаКафедры_ХП);
+            this.tableПоказатьАкадСоветников_ХП = new ПоказатьАкадСоветников_ХПDataTable();
+            base.Tables.Add(this.tableПоказатьАкадСоветников_ХП);
+            this.tableОтчетПоПреподавателю_ХП = new ОтчетПоПреподавателю_ХПDataTable();
+            base.Tables.Add(this.tableОтчетПоПреподавателю_ХП);
             this.relationFK_Группы_Направления = new global::System.Data.DataRelation("FK_Группы_Направления", new global::System.Data.DataColumn[] {
                         this.tableНаправления.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableГруппы.НаправлениеColumn}, false);
@@ -1764,6 +1816,18 @@ namespace Распределение_нагрузки {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeПоказатьАкадСоветников_ХП() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeОтчетПоПреподавателю_ХП() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1951,6 +2015,12 @@ namespace Распределение_нагрузки {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void ОтчетНагрузкаКафедры_ХПRowChangeEventHandler(object sender, ОтчетНагрузкаКафедры_ХПRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void ПоказатьАкадСоветников_ХПRowChangeEventHandler(object sender, ПоказатьАкадСоветников_ХПRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void ОтчетПоПреподавателю_ХПRowChangeEventHandler(object sender, ОтчетПоПреподавателю_ХПRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -18092,6 +18162,998 @@ namespace Распределение_нагрузки {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ПоказатьАкадСоветников_ХПDataTable : global::System.Data.TypedTableBase<ПоказатьАкадСоветников_ХПRow> {
+            
+            private global::System.Data.DataColumn columnФИО;
+            
+            private global::System.Data.DataColumn columnНаправление;
+            
+            private global::System.Data.DataColumn columnГруппа;
+            
+            private global::System.Data.DataColumn columnДисциплина;
+            
+            private global::System.Data.DataColumn columnЧасы;
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnID1;
+            
+            private global::System.Data.DataColumn columnПредмет;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ПоказатьАкадСоветников_ХПDataTable() {
+                this.TableName = "ПоказатьАкадСоветников_ХП";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal ПоказатьАкадСоветников_ХПDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected ПоказатьАкадСоветников_ХПDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ФИОColumn {
+                get {
+                    return this.columnФИО;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn НаправлениеColumn {
+                get {
+                    return this.columnНаправление;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ГруппаColumn {
+                get {
+                    return this.columnГруппа;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ДисциплинаColumn {
+                get {
+                    return this.columnДисциплина;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ЧасыColumn {
+                get {
+                    return this.columnЧасы;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ID1Column {
+                get {
+                    return this.columnID1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ПредметColumn {
+                get {
+                    return this.columnПредмет;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ПоказатьАкадСоветников_ХПRow this[int index] {
+                get {
+                    return ((ПоказатьАкадСоветников_ХПRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event ПоказатьАкадСоветников_ХПRowChangeEventHandler ПоказатьАкадСоветников_ХПRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event ПоказатьАкадСоветников_ХПRowChangeEventHandler ПоказатьАкадСоветников_ХПRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event ПоказатьАкадСоветников_ХПRowChangeEventHandler ПоказатьАкадСоветников_ХПRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event ПоказатьАкадСоветников_ХПRowChangeEventHandler ПоказатьАкадСоветников_ХПRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddПоказатьАкадСоветников_ХПRow(ПоказатьАкадСоветников_ХПRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ПоказатьАкадСоветников_ХПRow AddПоказатьАкадСоветников_ХПRow(string ФИО, string Направление, string Группа, string Дисциплина, decimal Часы, int Предмет) {
+                ПоказатьАкадСоветников_ХПRow rowПоказатьАкадСоветников_ХПRow = ((ПоказатьАкадСоветников_ХПRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ФИО,
+                        Направление,
+                        Группа,
+                        Дисциплина,
+                        Часы,
+                        null,
+                        null,
+                        Предмет};
+                rowПоказатьАкадСоветников_ХПRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowПоказатьАкадСоветников_ХПRow);
+                return rowПоказатьАкадСоветников_ХПRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ПоказатьАкадСоветников_ХПDataTable cln = ((ПоказатьАкадСоветников_ХПDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ПоказатьАкадСоветников_ХПDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnФИО = base.Columns["ФИО"];
+                this.columnНаправление = base.Columns["Направление"];
+                this.columnГруппа = base.Columns["Группа"];
+                this.columnДисциплина = base.Columns["Дисциплина"];
+                this.columnЧасы = base.Columns["Часы"];
+                this.columnID = base.Columns["ID"];
+                this.columnID1 = base.Columns["ID1"];
+                this.columnПредмет = base.Columns["Предмет"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnФИО = new global::System.Data.DataColumn("ФИО", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnФИО);
+                this.columnНаправление = new global::System.Data.DataColumn("Направление", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnНаправление);
+                this.columnГруппа = new global::System.Data.DataColumn("Группа", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnГруппа);
+                this.columnДисциплина = new global::System.Data.DataColumn("Дисциплина", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnДисциплина);
+                this.columnЧасы = new global::System.Data.DataColumn("Часы", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnЧасы);
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnID1 = new global::System.Data.DataColumn("ID1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID1);
+                this.columnПредмет = new global::System.Data.DataColumn("Предмет", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnПредмет);
+                this.columnФИО.ReadOnly = true;
+                this.columnФИО.MaxLength = 152;
+                this.columnНаправление.MaxLength = 50;
+                this.columnГруппа.MaxLength = 50;
+                this.columnДисциплина.MaxLength = 2147483647;
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
+                this.columnID.AllowDBNull = false;
+                this.columnID.ReadOnly = true;
+                this.columnID1.AutoIncrement = true;
+                this.columnID1.AutoIncrementSeed = -1;
+                this.columnID1.AutoIncrementStep = -1;
+                this.columnID1.AllowDBNull = false;
+                this.columnID1.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ПоказатьАкадСоветников_ХПRow NewПоказатьАкадСоветников_ХПRow() {
+                return ((ПоказатьАкадСоветников_ХПRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ПоказатьАкадСоветников_ХПRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ПоказатьАкадСоветников_ХПRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ПоказатьАкадСоветников_ХПRowChanged != null)) {
+                    this.ПоказатьАкадСоветников_ХПRowChanged(this, new ПоказатьАкадСоветников_ХПRowChangeEvent(((ПоказатьАкадСоветников_ХПRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ПоказатьАкадСоветников_ХПRowChanging != null)) {
+                    this.ПоказатьАкадСоветников_ХПRowChanging(this, new ПоказатьАкадСоветников_ХПRowChangeEvent(((ПоказатьАкадСоветников_ХПRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ПоказатьАкадСоветников_ХПRowDeleted != null)) {
+                    this.ПоказатьАкадСоветников_ХПRowDeleted(this, new ПоказатьАкадСоветников_ХПRowChangeEvent(((ПоказатьАкадСоветников_ХПRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ПоказатьАкадСоветников_ХПRowDeleting != null)) {
+                    this.ПоказатьАкадСоветников_ХПRowDeleting(this, new ПоказатьАкадСоветников_ХПRowChangeEvent(((ПоказатьАкадСоветников_ХПRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveПоказатьАкадСоветников_ХПRow(ПоказатьАкадСоветников_ХПRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                РаспределениеНагрузкиDataSet ds = new РаспределениеНагрузкиDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ПоказатьАкадСоветников_ХПDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ОтчетПоПреподавателю_ХПDataTable : global::System.Data.TypedTableBase<ОтчетПоПреподавателю_ХПRow> {
+            
+            private global::System.Data.DataColumn columnНазвание;
+            
+            private global::System.Data.DataColumn columnГруппа;
+            
+            private global::System.Data.DataColumn columnКоличество;
+            
+            private global::System.Data.DataColumn columnКредиты;
+            
+            private global::System.Data.DataColumn columnСеместр;
+            
+            private global::System.Data.DataColumn columnЛекции_всего;
+            
+            private global::System.Data.DataColumn columnЛекции;
+            
+            private global::System.Data.DataColumn columnПрактические_всего;
+            
+            private global::System.Data.DataColumn columnПрактика;
+            
+            private global::System.Data.DataColumn columnЛабораторные_всего;
+            
+            private global::System.Data.DataColumn columnПрактика1;
+            
+            private global::System.Data.DataColumn columnКП_по_уч_плану;
+            
+            private global::System.Data.DataColumn columnПриемКП;
+            
+            private global::System.Data.DataColumn columnРуководствоКП;
+            
+            private global::System.Data.DataColumn columnГрупповых_конс;
+            
+            private global::System.Data.DataColumn columnИндивид_конс;
+            
+            private global::System.Data.DataColumn columnКонсультацииАС;
+            
+            private global::System.Data.DataColumn columnПроверки_КР;
+            
+            private global::System.Data.DataColumn columnЗанятий_завкаф;
+            
+            private global::System.Data.DataColumn columnРецензирование_КР;
+            
+            private global::System.Data.DataColumn columnРуководствоУП;
+            
+            private global::System.Data.DataColumn columnРуководство_ПП;
+            
+            private global::System.Data.DataColumn columnНа_зачеты;
+            
+            private global::System.Data.DataColumn columnНаЭкзамены;
+            
+            private global::System.Data.DataColumn columnСРС;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ОтчетПоПреподавателю_ХПDataTable() {
+                this.TableName = "ОтчетПоПреподавателю_ХП";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal ОтчетПоПреподавателю_ХПDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected ОтчетПоПреподавателю_ХПDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn НазваниеColumn {
+                get {
+                    return this.columnНазвание;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ГруппаColumn {
+                get {
+                    return this.columnГруппа;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn КоличествоColumn {
+                get {
+                    return this.columnКоличество;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn КредитыColumn {
+                get {
+                    return this.columnКредиты;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn СеместрColumn {
+                get {
+                    return this.columnСеместр;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Лекции_всегоColumn {
+                get {
+                    return this.columnЛекции_всего;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ЛекцииColumn {
+                get {
+                    return this.columnЛекции;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Практические_всегоColumn {
+                get {
+                    return this.columnПрактические_всего;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ПрактикаColumn {
+                get {
+                    return this.columnПрактика;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Лабораторные_всегоColumn {
+                get {
+                    return this.columnЛабораторные_всего;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Практика1Column {
+                get {
+                    return this.columnПрактика1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn КП_по_уч_плануColumn {
+                get {
+                    return this.columnКП_по_уч_плану;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ПриемКПColumn {
+                get {
+                    return this.columnПриемКП;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn РуководствоКПColumn {
+                get {
+                    return this.columnРуководствоКП;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Групповых_консColumn {
+                get {
+                    return this.columnГрупповых_конс;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Индивид_консColumn {
+                get {
+                    return this.columnИндивид_конс;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn КонсультацииАСColumn {
+                get {
+                    return this.columnКонсультацииАС;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Проверки_КРColumn {
+                get {
+                    return this.columnПроверки_КР;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Занятий_завкафColumn {
+                get {
+                    return this.columnЗанятий_завкаф;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Рецензирование_КРColumn {
+                get {
+                    return this.columnРецензирование_КР;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn РуководствоУПColumn {
+                get {
+                    return this.columnРуководствоУП;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Руководство_ППColumn {
+                get {
+                    return this.columnРуководство_ПП;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn На_зачетыColumn {
+                get {
+                    return this.columnНа_зачеты;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn НаЭкзаменыColumn {
+                get {
+                    return this.columnНаЭкзамены;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn СРСColumn {
+                get {
+                    return this.columnСРС;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ОтчетПоПреподавателю_ХПRow this[int index] {
+                get {
+                    return ((ОтчетПоПреподавателю_ХПRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event ОтчетПоПреподавателю_ХПRowChangeEventHandler ОтчетПоПреподавателю_ХПRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event ОтчетПоПреподавателю_ХПRowChangeEventHandler ОтчетПоПреподавателю_ХПRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event ОтчетПоПреподавателю_ХПRowChangeEventHandler ОтчетПоПреподавателю_ХПRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event ОтчетПоПреподавателю_ХПRowChangeEventHandler ОтчетПоПреподавателю_ХПRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddОтчетПоПреподавателю_ХПRow(ОтчетПоПреподавателю_ХПRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ОтчетПоПреподавателю_ХПRow AddОтчетПоПреподавателю_ХПRow(
+                        string Название, 
+                        string Группа, 
+                        byte Количество, 
+                        int Кредиты, 
+                        int Семестр, 
+                        int Лекции_всего, 
+                        decimal Лекции, 
+                        int Практические_всего, 
+                        int Практика, 
+                        int Лабораторные_всего, 
+                        int Практика1, 
+                        int КП_по_уч_плану, 
+                        decimal ПриемКП, 
+                        decimal РуководствоКП, 
+                        int Групповых_конс, 
+                        int Индивид_конс, 
+                        decimal КонсультацииАС, 
+                        int Проверки_КР, 
+                        int Занятий_завкаф, 
+                        int Рецензирование_КР, 
+                        decimal РуководствоУП, 
+                        decimal Руководство_ПП, 
+                        int На_зачеты, 
+                        decimal НаЭкзамены, 
+                        decimal СРС) {
+                ОтчетПоПреподавателю_ХПRow rowОтчетПоПреподавателю_ХПRow = ((ОтчетПоПреподавателю_ХПRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Название,
+                        Группа,
+                        Количество,
+                        Кредиты,
+                        Семестр,
+                        Лекции_всего,
+                        Лекции,
+                        Практические_всего,
+                        Практика,
+                        Лабораторные_всего,
+                        Практика1,
+                        КП_по_уч_плану,
+                        ПриемКП,
+                        РуководствоКП,
+                        Групповых_конс,
+                        Индивид_конс,
+                        КонсультацииАС,
+                        Проверки_КР,
+                        Занятий_завкаф,
+                        Рецензирование_КР,
+                        РуководствоУП,
+                        Руководство_ПП,
+                        На_зачеты,
+                        НаЭкзамены,
+                        СРС};
+                rowОтчетПоПреподавателю_ХПRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowОтчетПоПреподавателю_ХПRow);
+                return rowОтчетПоПреподавателю_ХПRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ОтчетПоПреподавателю_ХПDataTable cln = ((ОтчетПоПреподавателю_ХПDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ОтчетПоПреподавателю_ХПDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnНазвание = base.Columns["Название"];
+                this.columnГруппа = base.Columns["Группа"];
+                this.columnКоличество = base.Columns["Количество"];
+                this.columnКредиты = base.Columns["Кредиты"];
+                this.columnСеместр = base.Columns["Семестр"];
+                this.columnЛекции_всего = base.Columns["Лекции_всего"];
+                this.columnЛекции = base.Columns["Лекции"];
+                this.columnПрактические_всего = base.Columns["Практические_всего"];
+                this.columnПрактика = base.Columns["Практика"];
+                this.columnЛабораторные_всего = base.Columns["Лабораторные_всего"];
+                this.columnПрактика1 = base.Columns["Практика1"];
+                this.columnКП_по_уч_плану = base.Columns["КП_по_уч_плану"];
+                this.columnПриемКП = base.Columns["ПриемКП"];
+                this.columnРуководствоКП = base.Columns["РуководствоКП"];
+                this.columnГрупповых_конс = base.Columns["Групповых_конс"];
+                this.columnИндивид_конс = base.Columns["Индивид_конс"];
+                this.columnКонсультацииАС = base.Columns["КонсультацииАС"];
+                this.columnПроверки_КР = base.Columns["Проверки_КР"];
+                this.columnЗанятий_завкаф = base.Columns["Занятий_завкаф"];
+                this.columnРецензирование_КР = base.Columns["Рецензирование_КР"];
+                this.columnРуководствоУП = base.Columns["РуководствоУП"];
+                this.columnРуководство_ПП = base.Columns["Руководство_ПП"];
+                this.columnНа_зачеты = base.Columns["На_зачеты"];
+                this.columnНаЭкзамены = base.Columns["НаЭкзамены"];
+                this.columnСРС = base.Columns["СРС"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnНазвание = new global::System.Data.DataColumn("Название", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnНазвание);
+                this.columnГруппа = new global::System.Data.DataColumn("Группа", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnГруппа);
+                this.columnКоличество = new global::System.Data.DataColumn("Количество", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnКоличество);
+                this.columnКредиты = new global::System.Data.DataColumn("Кредиты", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnКредиты);
+                this.columnСеместр = new global::System.Data.DataColumn("Семестр", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnСеместр);
+                this.columnЛекции_всего = new global::System.Data.DataColumn("Лекции_всего", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnЛекции_всего.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Лекции_всего");
+                this.columnЛекции_всего.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Лекции_всегоColumn");
+                this.columnЛекции_всего.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnЛекции_всего");
+                this.columnЛекции_всего.ExtendedProperties.Add("Generator_UserColumnName", "Лекции_всего");
+                base.Columns.Add(this.columnЛекции_всего);
+                this.columnЛекции = new global::System.Data.DataColumn("Лекции", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnЛекции);
+                this.columnПрактические_всего = new global::System.Data.DataColumn("Практические_всего", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnПрактические_всего.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Практические_всего");
+                this.columnПрактические_всего.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Практические_всегоColumn");
+                this.columnПрактические_всего.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnПрактические_всего");
+                this.columnПрактические_всего.ExtendedProperties.Add("Generator_UserColumnName", "Практические_всего");
+                base.Columns.Add(this.columnПрактические_всего);
+                this.columnПрактика = new global::System.Data.DataColumn("Практика", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnПрактика);
+                this.columnЛабораторные_всего = new global::System.Data.DataColumn("Лабораторные_всего", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnЛабораторные_всего.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Лабораторные_всего");
+                this.columnЛабораторные_всего.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Лабораторные_всегоColumn");
+                this.columnЛабораторные_всего.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnЛабораторные_всего");
+                this.columnЛабораторные_всего.ExtendedProperties.Add("Generator_UserColumnName", "Лабораторные_всего");
+                base.Columns.Add(this.columnЛабораторные_всего);
+                this.columnПрактика1 = new global::System.Data.DataColumn("Практика1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnПрактика1);
+                this.columnКП_по_уч_плану = new global::System.Data.DataColumn("КП_по_уч_плану", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnКП_по_уч_плану);
+                this.columnПриемКП = new global::System.Data.DataColumn("ПриемКП", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnПриемКП);
+                this.columnРуководствоКП = new global::System.Data.DataColumn("РуководствоКП", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnРуководствоКП);
+                this.columnГрупповых_конс = new global::System.Data.DataColumn("Групповых_конс", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnГрупповых_конс);
+                this.columnИндивид_конс = new global::System.Data.DataColumn("Индивид_конс", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnИндивид_конс);
+                this.columnКонсультацииАС = new global::System.Data.DataColumn("КонсультацииАС", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnКонсультацииАС);
+                this.columnПроверки_КР = new global::System.Data.DataColumn("Проверки_КР", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnПроверки_КР);
+                this.columnЗанятий_завкаф = new global::System.Data.DataColumn("Занятий_завкаф", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnЗанятий_завкаф);
+                this.columnРецензирование_КР = new global::System.Data.DataColumn("Рецензирование_КР", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnРецензирование_КР);
+                this.columnРуководствоУП = new global::System.Data.DataColumn("РуководствоУП", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnРуководствоУП);
+                this.columnРуководство_ПП = new global::System.Data.DataColumn("Руководство_ПП", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnРуководство_ПП);
+                this.columnНа_зачеты = new global::System.Data.DataColumn("На_зачеты", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnНа_зачеты);
+                this.columnНаЭкзамены = new global::System.Data.DataColumn("НаЭкзамены", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnНаЭкзамены);
+                this.columnСРС = new global::System.Data.DataColumn("СРС", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnСРС);
+                this.columnНазвание.MaxLength = 2147483647;
+                this.columnГруппа.MaxLength = 50;
+                this.columnПрактика.ReadOnly = true;
+                this.columnПрактика1.ReadOnly = true;
+                this.columnКП_по_уч_плану.ReadOnly = true;
+                this.columnГрупповых_конс.ReadOnly = true;
+                this.columnИндивид_конс.ReadOnly = true;
+                this.columnПроверки_КР.ReadOnly = true;
+                this.columnЗанятий_завкаф.ReadOnly = true;
+                this.columnРецензирование_КР.ReadOnly = true;
+                this.columnРуководство_ПП.ReadOnly = true;
+                this.columnНа_зачеты.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ОтчетПоПреподавателю_ХПRow NewОтчетПоПреподавателю_ХПRow() {
+                return ((ОтчетПоПреподавателю_ХПRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ОтчетПоПреподавателю_ХПRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ОтчетПоПреподавателю_ХПRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ОтчетПоПреподавателю_ХПRowChanged != null)) {
+                    this.ОтчетПоПреподавателю_ХПRowChanged(this, new ОтчетПоПреподавателю_ХПRowChangeEvent(((ОтчетПоПреподавателю_ХПRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ОтчетПоПреподавателю_ХПRowChanging != null)) {
+                    this.ОтчетПоПреподавателю_ХПRowChanging(this, new ОтчетПоПреподавателю_ХПRowChangeEvent(((ОтчетПоПреподавателю_ХПRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ОтчетПоПреподавателю_ХПRowDeleted != null)) {
+                    this.ОтчетПоПреподавателю_ХПRowDeleted(this, new ОтчетПоПреподавателю_ХПRowChangeEvent(((ОтчетПоПреподавателю_ХПRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ОтчетПоПреподавателю_ХПRowDeleting != null)) {
+                    this.ОтчетПоПреподавателю_ХПRowDeleting(this, new ОтчетПоПреподавателю_ХПRowChangeEvent(((ОтчетПоПреподавателю_ХПRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveОтчетПоПреподавателю_ХПRow(ОтчетПоПреподавателю_ХПRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                РаспределениеНагрузкиDataSet ds = new РаспределениеНагрузкиDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ОтчетПоПреподавателю_ХПDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class Виды_занятийRow : global::System.Data.DataRow {
@@ -28663,6 +29725,949 @@ namespace Распределение_нагрузки {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ПоказатьАкадСоветников_ХПRow : global::System.Data.DataRow {
+            
+            private ПоказатьАкадСоветников_ХПDataTable tableПоказатьАкадСоветников_ХП;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal ПоказатьАкадСоветников_ХПRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableПоказатьАкадСоветников_ХП = ((ПоказатьАкадСоветников_ХПDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ФИО {
+                get {
+                    try {
+                        return ((string)(this[this.tableПоказатьАкадСоветников_ХП.ФИОColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'ФИО\' в таблице \'ПоказатьАкадСоветников_ХП\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableПоказатьАкадСоветников_ХП.ФИОColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Направление {
+                get {
+                    try {
+                        return ((string)(this[this.tableПоказатьАкадСоветников_ХП.НаправлениеColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Направление\' в таблице \'ПоказатьАкадСоветников_ХП\' равно DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableПоказатьАкадСоветников_ХП.НаправлениеColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Группа {
+                get {
+                    try {
+                        return ((string)(this[this.tableПоказатьАкадСоветников_ХП.ГруппаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Группа\' в таблице \'ПоказатьАкадСоветников_ХП\' равно DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableПоказатьАкадСоветников_ХП.ГруппаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Дисциплина {
+                get {
+                    try {
+                        return ((string)(this[this.tableПоказатьАкадСоветников_ХП.ДисциплинаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Дисциплина\' в таблице \'ПоказатьАкадСоветников_ХП\' равно DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableПоказатьАкадСоветников_ХП.ДисциплинаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal Часы {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableПоказатьАкадСоветников_ХП.ЧасыColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Часы\' в таблице \'ПоказатьАкадСоветников_ХП\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableПоказатьАкадСоветников_ХП.ЧасыColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tableПоказатьАкадСоветников_ХП.IDColumn]));
+                }
+                set {
+                    this[this.tableПоказатьАкадСоветников_ХП.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ID1 {
+                get {
+                    return ((int)(this[this.tableПоказатьАкадСоветников_ХП.ID1Column]));
+                }
+                set {
+                    this[this.tableПоказатьАкадСоветников_ХП.ID1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Предмет {
+                get {
+                    try {
+                        return ((int)(this[this.tableПоказатьАкадСоветников_ХП.ПредметColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Предмет\' в таблице \'ПоказатьАкадСоветников_ХП\' равно DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableПоказатьАкадСоветников_ХП.ПредметColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsФИОNull() {
+                return this.IsNull(this.tableПоказатьАкадСоветников_ХП.ФИОColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetФИОNull() {
+                this[this.tableПоказатьАкадСоветников_ХП.ФИОColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsНаправлениеNull() {
+                return this.IsNull(this.tableПоказатьАкадСоветников_ХП.НаправлениеColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetНаправлениеNull() {
+                this[this.tableПоказатьАкадСоветников_ХП.НаправлениеColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsГруппаNull() {
+                return this.IsNull(this.tableПоказатьАкадСоветников_ХП.ГруппаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetГруппаNull() {
+                this[this.tableПоказатьАкадСоветников_ХП.ГруппаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsДисциплинаNull() {
+                return this.IsNull(this.tableПоказатьАкадСоветников_ХП.ДисциплинаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetДисциплинаNull() {
+                this[this.tableПоказатьАкадСоветников_ХП.ДисциплинаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsЧасыNull() {
+                return this.IsNull(this.tableПоказатьАкадСоветников_ХП.ЧасыColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetЧасыNull() {
+                this[this.tableПоказатьАкадСоветников_ХП.ЧасыColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsПредметNull() {
+                return this.IsNull(this.tableПоказатьАкадСоветников_ХП.ПредметColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetПредметNull() {
+                this[this.tableПоказатьАкадСоветников_ХП.ПредметColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ОтчетПоПреподавателю_ХПRow : global::System.Data.DataRow {
+            
+            private ОтчетПоПреподавателю_ХПDataTable tableОтчетПоПреподавателю_ХП;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal ОтчетПоПреподавателю_ХПRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableОтчетПоПреподавателю_ХП = ((ОтчетПоПреподавателю_ХПDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Название {
+                get {
+                    try {
+                        return ((string)(this[this.tableОтчетПоПреподавателю_ХП.НазваниеColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Название\' в таблице \'ОтчетПоПреподавателю_ХП\' равно DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.НазваниеColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Группа {
+                get {
+                    try {
+                        return ((string)(this[this.tableОтчетПоПреподавателю_ХП.ГруппаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Группа\' в таблице \'ОтчетПоПреподавателю_ХП\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.ГруппаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public byte Количество {
+                get {
+                    try {
+                        return ((byte)(this[this.tableОтчетПоПреподавателю_ХП.КоличествоColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Количество\' в таблице \'ОтчетПоПреподавателю_ХП\' равно DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.КоличествоColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Кредиты {
+                get {
+                    try {
+                        return ((int)(this[this.tableОтчетПоПреподавателю_ХП.КредитыColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Кредиты\' в таблице \'ОтчетПоПреподавателю_ХП\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.КредитыColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Семестр {
+                get {
+                    try {
+                        return ((int)(this[this.tableОтчетПоПреподавателю_ХП.СеместрColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Семестр\' в таблице \'ОтчетПоПреподавателю_ХП\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.СеместрColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Лекции_всего {
+                get {
+                    try {
+                        return ((int)(this[this.tableОтчетПоПреподавателю_ХП.Лекции_всегоColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Лекции_всего\' в таблице \'ОтчетПоПреподавателю_ХП\' равно DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.Лекции_всегоColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal Лекции {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableОтчетПоПреподавателю_ХП.ЛекцииColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Лекции\' в таблице \'ОтчетПоПреподавателю_ХП\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.ЛекцииColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Практические_всего {
+                get {
+                    try {
+                        return ((int)(this[this.tableОтчетПоПреподавателю_ХП.Практические_всегоColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Практические_всего\' в таблице \'ОтчетПоПреподавателю_ХП\' рав" +
+                                "но DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.Практические_всегоColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Практика {
+                get {
+                    try {
+                        return ((int)(this[this.tableОтчетПоПреподавателю_ХП.ПрактикаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Практика\' в таблице \'ОтчетПоПреподавателю_ХП\' равно DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.ПрактикаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Лабораторные_всего {
+                get {
+                    try {
+                        return ((int)(this[this.tableОтчетПоПреподавателю_ХП.Лабораторные_всегоColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Лабораторные_всего\' в таблице \'ОтчетПоПреподавателю_ХП\' рав" +
+                                "но DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.Лабораторные_всегоColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Практика1 {
+                get {
+                    try {
+                        return ((int)(this[this.tableОтчетПоПреподавателю_ХП.Практика1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Практика1\' в таблице \'ОтчетПоПреподавателю_ХП\' равно DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.Практика1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int КП_по_уч_плану {
+                get {
+                    try {
+                        return ((int)(this[this.tableОтчетПоПреподавателю_ХП.КП_по_уч_плануColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'КП_по_уч_плану\' в таблице \'ОтчетПоПреподавателю_ХП\' равно D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.КП_по_уч_плануColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal ПриемКП {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableОтчетПоПреподавателю_ХП.ПриемКПColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'ПриемКП\' в таблице \'ОтчетПоПреподавателю_ХП\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.ПриемКПColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal РуководствоКП {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableОтчетПоПреподавателю_ХП.РуководствоКПColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'РуководствоКП\' в таблице \'ОтчетПоПреподавателю_ХП\' равно DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.РуководствоКПColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Групповых_конс {
+                get {
+                    try {
+                        return ((int)(this[this.tableОтчетПоПреподавателю_ХП.Групповых_консColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Групповых_конс\' в таблице \'ОтчетПоПреподавателю_ХП\' равно D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.Групповых_консColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Индивид_конс {
+                get {
+                    try {
+                        return ((int)(this[this.tableОтчетПоПреподавателю_ХП.Индивид_консColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Индивид_конс\' в таблице \'ОтчетПоПреподавателю_ХП\' равно DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.Индивид_консColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal КонсультацииАС {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableОтчетПоПреподавателю_ХП.КонсультацииАСColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'КонсультацииАС\' в таблице \'ОтчетПоПреподавателю_ХП\' равно D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.КонсультацииАСColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Проверки_КР {
+                get {
+                    try {
+                        return ((int)(this[this.tableОтчетПоПреподавателю_ХП.Проверки_КРColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Проверки_КР\' в таблице \'ОтчетПоПреподавателю_ХП\' равно DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.Проверки_КРColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Занятий_завкаф {
+                get {
+                    try {
+                        return ((int)(this[this.tableОтчетПоПреподавателю_ХП.Занятий_завкафColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Занятий_завкаф\' в таблице \'ОтчетПоПреподавателю_ХП\' равно D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.Занятий_завкафColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Рецензирование_КР {
+                get {
+                    try {
+                        return ((int)(this[this.tableОтчетПоПреподавателю_ХП.Рецензирование_КРColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Рецензирование_КР\' в таблице \'ОтчетПоПреподавателю_ХП\' равн" +
+                                "о DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.Рецензирование_КРColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal РуководствоУП {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableОтчетПоПреподавателю_ХП.РуководствоУПColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'РуководствоУП\' в таблице \'ОтчетПоПреподавателю_ХП\' равно DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.РуководствоУПColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal Руководство_ПП {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableОтчетПоПреподавателю_ХП.Руководство_ППColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Руководство_ПП\' в таблице \'ОтчетПоПреподавателю_ХП\' равно D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.Руководство_ППColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int На_зачеты {
+                get {
+                    try {
+                        return ((int)(this[this.tableОтчетПоПреподавателю_ХП.На_зачетыColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'На_зачеты\' в таблице \'ОтчетПоПреподавателю_ХП\' равно DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.На_зачетыColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal НаЭкзамены {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableОтчетПоПреподавателю_ХП.НаЭкзаменыColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'НаЭкзамены\' в таблице \'ОтчетПоПреподавателю_ХП\' равно DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.НаЭкзаменыColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal СРС {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableОтчетПоПреподавателю_ХП.СРСColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'СРС\' в таблице \'ОтчетПоПреподавателю_ХП\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчетПоПреподавателю_ХП.СРСColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsНазваниеNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.НазваниеColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetНазваниеNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.НазваниеColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsГруппаNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.ГруппаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetГруппаNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.ГруппаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsКоличествоNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.КоличествоColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetКоличествоNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.КоличествоColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsКредитыNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.КредитыColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetКредитыNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.КредитыColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsСеместрNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.СеместрColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetСеместрNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.СеместрColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsЛекции_всегоNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.Лекции_всегоColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetЛекции_всегоNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.Лекции_всегоColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsЛекцииNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.ЛекцииColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetЛекцииNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.ЛекцииColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsПрактические_всегоNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.Практические_всегоColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetПрактические_всегоNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.Практические_всегоColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsПрактикаNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.ПрактикаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetПрактикаNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.ПрактикаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsЛабораторные_всегоNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.Лабораторные_всегоColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetЛабораторные_всегоNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.Лабораторные_всегоColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsПрактика1Null() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.Практика1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetПрактика1Null() {
+                this[this.tableОтчетПоПреподавателю_ХП.Практика1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsКП_по_уч_плануNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.КП_по_уч_плануColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetКП_по_уч_плануNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.КП_по_уч_плануColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsПриемКПNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.ПриемКПColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetПриемКПNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.ПриемКПColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsРуководствоКПNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.РуководствоКПColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetРуководствоКПNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.РуководствоКПColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsГрупповых_консNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.Групповых_консColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetГрупповых_консNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.Групповых_консColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsИндивид_консNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.Индивид_консColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetИндивид_консNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.Индивид_консColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsКонсультацииАСNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.КонсультацииАСColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetКонсультацииАСNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.КонсультацииАСColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsПроверки_КРNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.Проверки_КРColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetПроверки_КРNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.Проверки_КРColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsЗанятий_завкафNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.Занятий_завкафColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetЗанятий_завкафNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.Занятий_завкафColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsРецензирование_КРNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.Рецензирование_КРColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetРецензирование_КРNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.Рецензирование_КРColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsРуководствоУПNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.РуководствоУПColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetРуководствоУПNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.РуководствоУПColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsРуководство_ППNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.Руководство_ППColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetРуководство_ППNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.Руководство_ППColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsНа_зачетыNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.На_зачетыColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetНа_зачетыNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.На_зачетыColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsНаЭкзаменыNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.НаЭкзаменыColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetНаЭкзаменыNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.НаЭкзаменыColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsСРСNull() {
+                return this.IsNull(this.tableОтчетПоПреподавателю_ХП.СРСColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetСРСNull() {
+                this[this.tableОтчетПоПреподавателю_ХП.СРСColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -30178,6 +32183,74 @@ namespace Распределение_нагрузки {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public ОтчетНагрузкаКафедры_ХПRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class ПоказатьАкадСоветников_ХПRowChangeEvent : global::System.EventArgs {
+            
+            private ПоказатьАкадСоветников_ХПRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ПоказатьАкадСоветников_ХПRowChangeEvent(ПоказатьАкадСоветников_ХПRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ПоказатьАкадСоветников_ХПRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class ОтчетПоПреподавателю_ХПRowChangeEvent : global::System.EventArgs {
+            
+            private ОтчетПоПреподавателю_ХПRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ОтчетПоПреподавателю_ХПRowChangeEvent(ОтчетПоПреподавателю_ХПRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ОтчетПоПреподавателю_ХПRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -43069,6 +45142,386 @@ SELECT ID, Название, Подготовка, Направление, Ку�
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ПоказатьАкадСоветников_ХПTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public ПоказатьАкадСоветников_ХПTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ПоказатьАкадСоветников_ХП";
+            tableMapping.ColumnMappings.Add("ФИО", "ФИО");
+            tableMapping.ColumnMappings.Add("Направление", "Направление");
+            tableMapping.ColumnMappings.Add("Группа", "Группа");
+            tableMapping.ColumnMappings.Add("Дисциплина", "Дисциплина");
+            tableMapping.ColumnMappings.Add("Часы", "Часы");
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("ID1", "ID1");
+            tableMapping.ColumnMappings.Add("Предмет", "Предмет");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Распределение_нагрузки.Properties.Settings.Default.РаспределениеНагрузкиConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.ПоказатьАкадСоветников_ХП";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(РаспределениеНагрузкиDataSet.ПоказатьАкадСоветников_ХПDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual РаспределениеНагрузкиDataSet.ПоказатьАкадСоветников_ХПDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            РаспределениеНагрузкиDataSet.ПоказатьАкадСоветников_ХПDataTable dataTable = new РаспределениеНагрузкиDataSet.ПоказатьАкадСоветников_ХПDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ОтчетПоПреподавателю_ХПTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public ОтчетПоПреподавателю_ХПTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ОтчетПоПреподавателю_ХП";
+            tableMapping.ColumnMappings.Add("Название", "Название");
+            tableMapping.ColumnMappings.Add("Группа", "Группа");
+            tableMapping.ColumnMappings.Add("Количество", "Количество");
+            tableMapping.ColumnMappings.Add("Кредиты", "Кредиты");
+            tableMapping.ColumnMappings.Add("Семестр", "Семестр");
+            tableMapping.ColumnMappings.Add("Лекции_всего", "Лекции_всего");
+            tableMapping.ColumnMappings.Add("Лекции", "Лекции");
+            tableMapping.ColumnMappings.Add("Практические_всего", "Практические_всего");
+            tableMapping.ColumnMappings.Add("Практика", "Практика");
+            tableMapping.ColumnMappings.Add("Лабораторные_всего", "Лабораторные_всего");
+            tableMapping.ColumnMappings.Add("Практика1", "Практика1");
+            tableMapping.ColumnMappings.Add("КП_по_уч_плану", "КП_по_уч_плану");
+            tableMapping.ColumnMappings.Add("ПриемКП", "ПриемКП");
+            tableMapping.ColumnMappings.Add("РуководствоКП", "РуководствоКП");
+            tableMapping.ColumnMappings.Add("Групповых_конс", "Групповых_конс");
+            tableMapping.ColumnMappings.Add("Индивид_конс", "Индивид_конс");
+            tableMapping.ColumnMappings.Add("КонсультацииАС", "КонсультацииАС");
+            tableMapping.ColumnMappings.Add("Проверки_КР", "Проверки_КР");
+            tableMapping.ColumnMappings.Add("Занятий_завкаф", "Занятий_завкаф");
+            tableMapping.ColumnMappings.Add("Рецензирование_КР", "Рецензирование_КР");
+            tableMapping.ColumnMappings.Add("РуководствоУП", "РуководствоУП");
+            tableMapping.ColumnMappings.Add("Руководство_ПП", "Руководство_ПП");
+            tableMapping.ColumnMappings.Add("На_зачеты", "На_зачеты");
+            tableMapping.ColumnMappings.Add("НаЭкзамены", "НаЭкзамены");
+            tableMapping.ColumnMappings.Add("СРС", "СРС");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Распределение_нагрузки.Properties.Settings.Default.РаспределениеНагрузкиConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.ОтчетПоПреподавателю_ХП";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@teacherID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(РаспределениеНагрузкиDataSet.ОтчетПоПреподавателю_ХПDataTable dataTable, global::System.Nullable<int> teacherID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((teacherID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(teacherID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual РаспределениеНагрузкиDataSet.ОтчетПоПреподавателю_ХПDataTable GetData(global::System.Nullable<int> teacherID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((teacherID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(teacherID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            РаспределениеНагрузкиDataSet.ОтчетПоПреподавателю_ХПDataTable dataTable = new РаспределениеНагрузкиDataSet.ОтчетПоПреподавателю_ХПDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class QueriesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.IDbCommand[] _commandCollection;
@@ -45052,39 +47505,12 @@ SELECT ID, Название, Подготовка, Направление, Ку�
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateUpdatedRows(РаспределениеНагрузкиDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._направленияTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Направления.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._направленияTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._формы_обученияTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Формы_обучения.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._формы_обученияTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._уровни_подготовкиTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Уровни_подготовки.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._уровни_подготовкиTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._языкиTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Языки.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._языкиTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -45097,12 +47523,57 @@ SELECT ID, Название, Подготовка, Направление, Ку�
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._языкиTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Языки.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._языкиTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._направленияTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Направления.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._направленияTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._уровни_подготовкиTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Уровни_подготовки.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._уровни_подготовкиTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._учебные_планыTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Учебные_планы.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._учебные_планыTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._виды_занятийTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Виды_занятий.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._виды_занятийTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._предметыTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Предметы.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._предметыTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -45124,15 +47595,6 @@ SELECT ID, Название, Подготовка, Направление, Ку�
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._предметыTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Предметы.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._предметыTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._преподавателиTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Преподаватели.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -45142,12 +47604,12 @@ SELECT ID, Название, Подготовка, Направление, Ку�
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._учебные_планыTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Учебные_планы.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._преподаватели_годTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Преподаватели_год.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._учебные_планыTableAdapter.Update(updatedRows));
+                    result = (result + this._преподаватели_годTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -45169,30 +47631,12 @@ SELECT ID, Название, Подготовка, Направление, Ку�
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._факультативыTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Факультативы.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._потокиTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Потоки.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._факультативыTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._набор_предметовTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Набор_предметов.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._набор_предметовTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._преподаватели_годTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Преподаватели_год.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._преподаватели_годTableAdapter.Update(updatedRows));
+                    result = (result + this._потокиTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -45214,12 +47658,21 @@ SELECT ID, Название, Подготовка, Направление, Ку�
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._потокиTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Потоки.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._набор_предметовTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Набор_предметов.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._потокиTableAdapter.Update(updatedRows));
+                    result = (result + this._набор_предметовTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._факультативыTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Факультативы.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._факультативыTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -45233,35 +47686,11 @@ SELECT ID, Название, Подготовка, Направление, Ку�
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateInsertedRows(РаспределениеНагрузкиDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._направленияTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Направления.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._направленияTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._формы_обученияTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Формы_обучения.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._формы_обученияTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._уровни_подготовкиTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Уровни_подготовки.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._уровни_подготовкиTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._языкиTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Языки.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._языкиTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -45273,11 +47702,51 @@ SELECT ID, Название, Подготовка, Направление, Ку�
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._языкиTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Языки.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._языкиTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._направленияTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Направления.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._направленияTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._уровни_подготовкиTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Уровни_подготовки.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._уровни_подготовкиTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._учебные_планыTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Учебные_планы.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._учебные_планыTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._виды_занятийTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Виды_занятий.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._виды_занятийTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._предметыTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Предметы.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._предметыTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -45297,14 +47766,6 @@ SELECT ID, Название, Подготовка, Направление, Ку�
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._предметыTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Предметы.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._предметыTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._преподавателиTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Преподаватели.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -45313,11 +47774,11 @@ SELECT ID, Название, Подготовка, Направление, Ку�
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._учебные_планыTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Учебные_планы.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._преподаватели_годTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Преподаватели_год.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._учебные_планыTableAdapter.Update(addedRows));
+                    result = (result + this._преподаватели_годTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -45337,27 +47798,11 @@ SELECT ID, Название, Подготовка, Направление, Ку�
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._факультативыTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Факультативы.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._потокиTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Потоки.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._факультативыTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._набор_предметовTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Набор_предметов.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._набор_предметовTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._преподаватели_годTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Преподаватели_год.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._преподаватели_годTableAdapter.Update(addedRows));
+                    result = (result + this._потокиTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -45377,11 +47822,19 @@ SELECT ID, Название, Подготовка, Направление, Ку�
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._потокиTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Потоки.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._набор_предметовTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Набор_предметов.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._потокиTableAdapter.Update(addedRows));
+                    result = (result + this._набор_предметовTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._факультативыTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Факультативы.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._факультативыTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -45395,11 +47848,19 @@ SELECT ID, Название, Подготовка, Направление, Ку�
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(РаспределениеНагрузкиDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._потокиTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Потоки.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._факультативыTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Факультативы.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._потокиTableAdapter.Update(deletedRows));
+                    result = (result + this._факультативыTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._набор_предметовTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Набор_предметов.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._набор_предметовTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -45419,27 +47880,11 @@ SELECT ID, Название, Подготовка, Направление, Ку�
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._преподаватели_годTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Преподаватели_год.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._потокиTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Потоки.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._преподаватели_годTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._набор_предметовTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Набор_предметов.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._набор_предметовTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._факультативыTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Факультативы.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._факультативыTableAdapter.Update(deletedRows));
+                    result = (result + this._потокиTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -45459,11 +47904,11 @@ SELECT ID, Название, Подготовка, Направление, Ку�
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._учебные_планыTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Учебные_планы.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._преподаватели_годTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Преподаватели_год.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._учебные_планыTableAdapter.Update(deletedRows));
+                    result = (result + this._преподаватели_годTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -45472,14 +47917,6 @@ SELECT ID, Название, Подготовка, Направление, Ку�
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._преподавателиTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._предметыTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Предметы.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._предметыTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -45499,6 +47936,14 @@ SELECT ID, Название, Подготовка, Направление, Ку�
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._предметыTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Предметы.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._предметыTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._виды_занятийTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Виды_занятий.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -45507,19 +47952,11 @@ SELECT ID, Название, Подготовка, Направление, Ку�
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._важность_предметаTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Важность_предмета.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._учебные_планыTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Учебные_планы.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._важность_предметаTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._языкиTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Языки.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._языкиTableAdapter.Update(deletedRows));
+                    result = (result + this._учебные_планыTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -45531,19 +47968,35 @@ SELECT ID, Название, Подготовка, Направление, Ку�
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._формы_обученияTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Формы_обучения.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._формы_обученияTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._направленияTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Направления.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._направленияTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._языкиTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Языки.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._языкиTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._важность_предметаTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Важность_предмета.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._важность_предметаTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._формы_обученияTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Формы_обучения.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._формы_обученияTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

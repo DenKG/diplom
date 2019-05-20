@@ -114,12 +114,12 @@ namespace Распределение_нагрузки
                         {
                             SqlCommand addGroup = new SqlCommand("ДобавитьГруппу_ХП", MyConnection);
                             addGroup.CommandType = CommandType.StoredProcedure;
-                            addGroup.Parameters.AddWithValue("@name", groupName);
+                            //addGroup.Parameters.AddWithValue("@name", groupName);
                             addGroup.Parameters.AddWithValue("@direction", Convert.ToInt32(направлениеComboBox.SelectedValue));
                             addGroup.Parameters.AddWithValue("@studQuant", Convert.ToInt32(количествоСтудентовTextBox.Text));
                             addGroup.Parameters.AddWithValue("@language", Convert.ToInt32(языкComboBox.SelectedValue));
                             addGroup.Parameters.AddWithValue("@year", Convert.ToInt32(годПоступленияTextBox.Text));
-                            addGroup.Parameters.AddWithValue("@course", Convert.ToInt32(годПоступленияTextBox.Text) - DateTime.Now.Year);
+                            addGroup.Parameters.AddWithValue("@course", DateTime.Now.Year + 1 - Convert.ToInt32(годПоступленияTextBox.Text));
                             addGroup.Parameters.AddWithValue("@preparation", Convert.ToInt32(уровеньПодготовкиComboBox.SelectedValue));
                             addGroup.Parameters.AddWithValue("@budget", Convert.ToInt32(количествоБюджетниковTextBox.Text));
                             addGroup.Parameters.AddWithValue("@contract", Convert.ToInt32(количествоКонтрактниковTextBox.Text));
@@ -168,7 +168,7 @@ namespace Распределение_нагрузки
                             addGroup.Parameters.AddWithValue("@studQuant", Convert.ToInt32(количествоСтудентовTextBox.Text));
                             addGroup.Parameters.AddWithValue("@language", Convert.ToInt32(языкComboBox.SelectedValue));
                             addGroup.Parameters.AddWithValue("@year", Convert.ToInt32(годПоступленияTextBox.Text));
-                            addGroup.Parameters.AddWithValue("@course", Convert.ToInt32(годПоступленияTextBox.Text) - DateTime.Now.Year);
+                            addGroup.Parameters.AddWithValue("@course", DateTime.Now.Year + 1 - Convert.ToInt32(годПоступленияTextBox.Text));
                             addGroup.Parameters.AddWithValue("@preparation", Convert.ToInt32(уровеньПодготовкиComboBox.SelectedValue));
                             addGroup.Parameters.AddWithValue("@budget", Convert.ToInt32(количествоБюджетниковTextBox.Text));
                             addGroup.Parameters.AddWithValue("@contract", Convert.ToInt32(количествоКонтрактниковTextBox.Text));
@@ -250,8 +250,8 @@ namespace Распределение_нагрузки
                 количествоБюджетниковTextBox.Text = "0";
             }
 
-            if (!string.IsNullOrWhiteSpace(группаTextBox.Text))
-            {
+            //if (!string.IsNullOrWhiteSpace(группаTextBox.Text))
+            //{
                 decision = true;
                 if (!string.IsNullOrWhiteSpace(количествоСтудентовTextBox.Text))
                 {
@@ -287,12 +287,12 @@ namespace Распределение_нагрузки
                     decision = false;
                     MessageBox.Show("Укажите количество студентов", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-            }
-            else
-            {
-                decision = false;
-                MessageBox.Show("Введите название группы", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+            //}
+            //else
+            //{
+            //    decision = false;
+            //    MessageBox.Show("Введите название группы", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //}
 
             return decision;
         }

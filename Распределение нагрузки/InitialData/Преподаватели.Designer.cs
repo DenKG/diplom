@@ -141,21 +141,8 @@
             this.группыTableAdapter = new Распределение_нагрузки.РаспределениеНагрузкиDataSetTableAdapters.ГруппыTableAdapter();
             this.важность_предметаTableAdapter = new Распределение_нагрузки.РаспределениеНагрузкиDataSetTableAdapters.Важность_предметаTableAdapter();
             this.направленияTableAdapter = new Распределение_нагрузки.РаспределениеНагрузкиDataSetTableAdapters.НаправленияTableAdapter();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.преподавателиBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.распределениеНагрузкиDataSet)).BeginInit();
@@ -190,8 +177,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.распределениеНагрузкиDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.преподавателиBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.предметыКафедрыХПBindingSource)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -671,7 +656,7 @@
             this.groupBox2.Controls.Add(this.предупреждениеLb2);
             this.groupBox2.Location = new System.Drawing.Point(15, 274);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1021, 443);
+            this.groupBox2.Size = new System.Drawing.Size(1021, 354);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Предметы преподавателя";
@@ -679,7 +664,7 @@
             // предупреждениеPicture
             // 
             this.предупреждениеPicture.Image = global::Распределение_нагрузки.Properties.Resources.Предупреждение_треугольник_иконка;
-            this.предупреждениеPicture.Location = new System.Drawing.Point(14, 409);
+            this.предупреждениеPicture.Location = new System.Drawing.Point(14, 317);
             this.предупреждениеPicture.Name = "предупреждениеPicture";
             this.предупреждениеPicture.Size = new System.Drawing.Size(30, 28);
             this.предупреждениеPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -691,7 +676,7 @@
             // 
             this.предупреждениеLLb.AutoSize = true;
             this.предупреждениеLLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.предупреждениеLLb.Location = new System.Drawing.Point(468, 419);
+            this.предупреждениеLLb.Location = new System.Drawing.Point(468, 327);
             this.предупреждениеLLb.Name = "предупреждениеLLb";
             this.предупреждениеLLb.Size = new System.Drawing.Size(101, 15);
             this.предупреждениеLLb.TabIndex = 37;
@@ -704,7 +689,7 @@
             // 
             this.предупреждениеLb1.AutoSize = true;
             this.предупреждениеLb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.предупреждениеLb1.Location = new System.Drawing.Point(50, 419);
+            this.предупреждениеLb1.Location = new System.Drawing.Point(50, 327);
             this.предупреждениеLb1.Name = "предупреждениеLb1";
             this.предупреждениеLb1.Size = new System.Drawing.Size(422, 15);
             this.предупреждениеLb1.TabIndex = 36;
@@ -714,7 +699,7 @@
             // импортButton
             // 
             this.импортButton.Enabled = false;
-            this.импортButton.Location = new System.Drawing.Point(823, 414);
+            this.импортButton.Location = new System.Drawing.Point(823, 322);
             this.импортButton.Name = "импортButton";
             this.импортButton.Size = new System.Drawing.Size(75, 23);
             this.импортButton.TabIndex = 35;
@@ -723,7 +708,7 @@
             // 
             // экспортButton
             // 
-            this.экспортButton.Location = new System.Drawing.Point(904, 414);
+            this.экспортButton.Location = new System.Drawing.Point(904, 322);
             this.экспортButton.Name = "экспортButton";
             this.экспортButton.Size = new System.Drawing.Size(108, 23);
             this.экспортButton.TabIndex = 34;
@@ -733,7 +718,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Controls.Add(this.группыПотокиComboBox);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.уровеньПодготовкиComboBox);
@@ -757,7 +741,7 @@
             this.groupBox3.Controls.Add(this.направлениеComboBox);
             this.groupBox3.Location = new System.Drawing.Point(9, 19);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1003, 166);
+            this.groupBox3.Size = new System.Drawing.Size(1003, 79);
             this.groupBox3.TabIndex = 33;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Назначить/Удалить дисциплину";
@@ -938,7 +922,7 @@
             this.groupBox5.Controls.Add(this.направлениеCheckBox);
             this.groupBox5.Controls.Add(this.всеПредметыButton);
             this.groupBox5.Controls.Add(this.preparationCheckBox);
-            this.groupBox5.Location = new System.Drawing.Point(9, 191);
+            this.groupBox5.Location = new System.Drawing.Point(9, 104);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(117, 212);
             this.groupBox5.TabIndex = 32;
@@ -1042,12 +1026,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(132, 191);
+            this.dataGridView1.Location = new System.Drawing.Point(132, 104);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(880, 212);
+            this.dataGridView1.Size = new System.Drawing.Size(880, 211);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -1055,7 +1039,7 @@
             // 
             this.предупреждениеLb2.AutoSize = true;
             this.предупреждениеLb2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.предупреждениеLb2.Location = new System.Drawing.Point(566, 419);
+            this.предупреждениеLb2.Location = new System.Drawing.Point(566, 327);
             this.предупреждениеLb2.Name = "предупреждениеLb2";
             this.предупреждениеLb2.Size = new System.Drawing.Size(235, 15);
             this.предупреждениеLb2.TabIndex = 38;
@@ -1189,176 +1173,32 @@
             // 
             this.направленияTableAdapter.ClearBeforeFill = true;
             // 
-            // checkBox1
+            // button2
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(78, 17);
-            this.checkBox1.TabIndex = 32;
-            this.checkBox1.Text = "Прием КП";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(941, 30);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(94, 23);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Дипломники";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // button3
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(6, 42);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(109, 17);
-            this.checkBox2.TabIndex = 33;
-            this.checkBox2.Text = "Руководство КП";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(121, 19);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(114, 17);
-            this.checkBox3.TabIndex = 34;
-            this.checkBox3.Text = "Консультации АС";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(121, 42);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(105, 17);
-            this.checkBox4.TabIndex = 35;
-            this.checkBox4.Text = "Рук-во учеб. пр.";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(246, 19);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(113, 17);
-            this.checkBox5.TabIndex = 36;
-            this.checkBox5.Text = "Рук-во прозв. пр.";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(246, 42);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(112, 17);
-            this.checkBox6.TabIndex = 37;
-            this.checkBox6.Text = "Рук-во проектир.";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(365, 19);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(121, 17);
-            this.checkBox7.TabIndex = 38;
-            this.checkBox7.Text = "Консульт. по разд.";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(365, 42);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(116, 17);
-            this.checkBox8.TabIndex = 39;
-            this.checkBox8.Text = "Реценз. проектов";
-            this.checkBox8.UseVisualStyleBackColor = true;
-            // 
-            // checkBox9
-            // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(492, 19);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(100, 17);
-            this.checkBox9.TabIndex = 40;
-            this.checkBox9.Text = "Участие в ГЭК";
-            this.checkBox9.UseVisualStyleBackColor = true;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.checkBox13);
-            this.groupBox4.Controls.Add(this.groupBox6);
-            this.groupBox4.Controls.Add(this.checkBox1);
-            this.groupBox4.Controls.Add(this.checkBox9);
-            this.groupBox4.Controls.Add(this.checkBox2);
-            this.groupBox4.Controls.Add(this.checkBox8);
-            this.groupBox4.Controls.Add(this.checkBox3);
-            this.groupBox4.Controls.Add(this.checkBox7);
-            this.groupBox4.Controls.Add(this.checkBox4);
-            this.groupBox4.Controls.Add(this.checkBox6);
-            this.groupBox4.Controls.Add(this.checkBox5);
-            this.groupBox4.Location = new System.Drawing.Point(11, 72);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(986, 88);
-            this.groupBox4.TabIndex = 41;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Прочие настройки";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.checkBox12);
-            this.groupBox6.Controls.Add(this.checkBox11);
-            this.groupBox6.Controls.Add(this.checkBox10);
-            this.groupBox6.Location = new System.Drawing.Point(598, 11);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(382, 45);
-            this.groupBox6.TabIndex = 41;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Для дистантников";
-            // 
-            // checkBox10
-            // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Enabled = false;
-            this.checkBox10.Location = new System.Drawing.Point(7, 19);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(111, 17);
-            this.checkBox10.TabIndex = 0;
-            this.checkBox10.Text = "Off-line консульт.";
-            this.checkBox10.UseVisualStyleBackColor = true;
-            // 
-            // checkBox11
-            // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Enabled = false;
-            this.checkBox11.Location = new System.Drawing.Point(124, 19);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(128, 17);
-            this.checkBox11.TabIndex = 1;
-            this.checkBox11.Text = "Рецензирование КР";
-            this.checkBox11.UseVisualStyleBackColor = true;
-            // 
-            // checkBox12
-            // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Enabled = false;
-            this.checkBox12.Location = new System.Drawing.Point(265, 19);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(111, 17);
-            this.checkBox12.TabIndex = 2;
-            this.checkBox12.Text = "On-line консульт.";
-            this.checkBox12.UseVisualStyleBackColor = true;
-            // 
-            // checkBox13
-            // 
-            this.checkBox13.AutoSize = true;
-            this.checkBox13.Location = new System.Drawing.Point(698, 62);
-            this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(282, 17);
-            this.checkBox13.TabIndex = 42;
-            this.checkBox13.Text = "Сохранять настройки после назначения предмета";
-            this.checkBox13.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(830, 30);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(105, 23);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "Акад. советники";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // Преподаватели
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1047, 725);
+            this.ClientSize = new System.Drawing.Size(1047, 631);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.добавитьПреподавателяButton);
             this.Controls.Add(this.редактироватьПреподавателяButton);
             this.Controls.Add(this.groupBox1);
@@ -1412,10 +1252,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.распределениеНагрузкиDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.преподавателиBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.предметыКафедрыХПBindingSource)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1535,20 +1371,7 @@
         private System.Windows.Forms.LinkLabel предупреждениеLLb;
         private System.Windows.Forms.Label предупреждениеLb1;
         private System.Windows.Forms.PictureBox предупреждениеPicture;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.CheckBox checkBox13;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.CheckBox checkBox12;
-        private System.Windows.Forms.CheckBox checkBox11;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

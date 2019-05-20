@@ -17,8 +17,11 @@ namespace Распределение_нагрузки
         int teacherID, posID, doljnost, subjectAndTypeID;
         bool addTeacher = false, editTeacher = false, saveTeacher = false, laboratorySelected = false;
 
+        public static Преподаватели SelfRef { get; set; }
+
         public Преподаватели()
         {
+            SelfRef = this;
             InitializeComponent();
         }
 
@@ -936,17 +939,17 @@ namespace Распределение_нагрузки
             RefreshTable(teacherID);
             UpdateSubjectComboBox();
             видЗанятияComboBox_SelectedIndexChanged(sender, e);
-            if (семестрComboBox.SelectedIndex == 0)
-            {
-                checkBox1.Enabled = false;
-                checkBox2.Enabled = false;
-                checkBox4.Enabled = false;
-                checkBox5.Enabled = false;
-                checkBox6.Enabled = false;
-                checkBox7.Enabled = false;
-                checkBox8.Enabled = false;
-                checkBox9.Enabled = false;
-            }
+            //if (семестрComboBox.SelectedIndex == 0)
+            //{
+            //    checkBox1.Enabled = false;
+            //    checkBox2.Enabled = false;
+            //    checkBox4.Enabled = false;
+            //    checkBox5.Enabled = false;
+            //    checkBox6.Enabled = false;
+            //    checkBox7.Enabled = false;
+            //    checkBox8.Enabled = false;
+            //    checkBox9.Enabled = false;
+            //}
         }
 
         private void важностьComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -1106,6 +1109,13 @@ namespace Распределение_нагрузки
         {
             Часы_преподавателей часы_Преподавателей = new Часы_преподавателей();
             часы_Преподавателей.ShowDialog();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            КонсультацииАС консультацииАС = new КонсультацииАС(teacherID);
+            //консультацииАС.Owner = this;
+            консультацииАС.Show();
         }
 
         private void selectGroups(int course, int language)

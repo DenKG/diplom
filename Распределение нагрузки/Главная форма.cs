@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WebForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -107,6 +108,21 @@ namespace Распределение_нагрузки
         {
             InitialData.Справочники справочники = new InitialData.Справочники();
             справочники.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "распределениеНагрузкиDataSet.ВсеПреподаватели_ХП". При необходимости она может быть перемещена или удалена.
+            this.всеПреподаватели_ХПTableAdapter.Fill(this.распределениеНагрузкиDataSet.ВсеПреподаватели_ХП);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "распределениеНагрузкиDataSet.Все_преподаватели_показать_ХП". При необходимости она может быть перемещена или удалена.
+            this.все_преподаватели_показать_ХПTableAdapter.Fill(this.распределениеНагрузкиDataSet.Все_преподаватели_показать_ХП);
+
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            Отчет_по_преподавателям отчет_По_Преподавателям = new Отчет_по_преподавателям((int)comboBox1.SelectedValue);
+            отчет_По_Преподавателям.Show();
         }
     }
 }
