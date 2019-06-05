@@ -143,6 +143,8 @@
             this.направленияTableAdapter = new Распределение_нагрузки.РаспределениеНагрузкиDataSetTableAdapters.НаправленияTableAdapter();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.fillBy1ToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillBy1ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.преподавателиBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.распределениеНагрузкиDataSet)).BeginInit();
@@ -177,6 +179,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.распределениеНагрузкиDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.преподавателиBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.предметыКафедрыХПBindingSource)).BeginInit();
+            this.fillBy1ToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -186,7 +189,7 @@
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1047, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1052, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -262,7 +265,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(15, 58);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1021, 210);
+            this.groupBox1.Size = new System.Drawing.Size(1026, 210);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Основное";
@@ -291,7 +294,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(738, 181);
+            this.dataGridView2.Size = new System.Drawing.Size(743, 181);
             this.dataGridView2.TabIndex = 28;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -656,7 +659,7 @@
             this.groupBox2.Controls.Add(this.предупреждениеLb2);
             this.groupBox2.Location = new System.Drawing.Point(15, 274);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1021, 354);
+            this.groupBox2.Size = new System.Drawing.Size(1026, 354);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Предметы преподавателя";
@@ -741,7 +744,7 @@
             this.groupBox3.Controls.Add(this.направлениеComboBox);
             this.groupBox3.Location = new System.Drawing.Point(9, 19);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1003, 79);
+            this.groupBox3.Size = new System.Drawing.Size(1017, 87);
             this.groupBox3.TabIndex = 33;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Назначить/Удалить дисциплину";
@@ -1031,7 +1034,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(880, 211);
+            this.dataGridView1.Size = new System.Drawing.Size(885, 211);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -1181,6 +1184,7 @@
             this.button2.TabIndex = 18;
             this.button2.Text = "Дипломники";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -1192,11 +1196,31 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
+            // fillBy1ToolStrip
+            // 
+            this.fillBy1ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillBy1ToolStripButton});
+            this.fillBy1ToolStrip.Location = new System.Drawing.Point(0, 24);
+            this.fillBy1ToolStrip.Name = "fillBy1ToolStrip";
+            this.fillBy1ToolStrip.Size = new System.Drawing.Size(1052, 25);
+            this.fillBy1ToolStrip.TabIndex = 20;
+            this.fillBy1ToolStrip.Text = "fillBy1ToolStrip";
+            this.fillBy1ToolStrip.Visible = false;
+            // 
+            // fillBy1ToolStripButton
+            // 
+            this.fillBy1ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillBy1ToolStripButton.Name = "fillBy1ToolStripButton";
+            this.fillBy1ToolStripButton.Size = new System.Drawing.Size(45, 22);
+            this.fillBy1ToolStripButton.Text = "FillBy1";
+            this.fillBy1ToolStripButton.Click += new System.EventHandler(this.fillBy1ToolStripButton_Click_1);
+            // 
             // Преподаватели
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1047, 631);
+            this.ClientSize = new System.Drawing.Size(1052, 631);
+            this.Controls.Add(this.fillBy1ToolStrip);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.добавитьПреподавателяButton);
@@ -1252,6 +1276,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.распределениеНагрузкиDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.преподавателиBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.предметыКафедрыХПBindingSource)).EndInit();
+            this.fillBy1ToolStrip.ResumeLayout(false);
+            this.fillBy1ToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1373,5 +1399,7 @@
         private System.Windows.Forms.PictureBox предупреждениеPicture;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ToolStrip fillBy1ToolStrip;
+        private System.Windows.Forms.ToolStripButton fillBy1ToolStripButton;
     }
 }

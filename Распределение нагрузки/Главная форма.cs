@@ -100,8 +100,11 @@ namespace Распределение_нагрузки
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            Нагрузка_кафедры нагрузка_Кафедры = new Нагрузка_кафедры();
-            нагрузка_Кафедры.Show();
+            //Нагрузка_кафедры нагрузка_Кафедры = new Нагрузка_кафедры();
+            //нагрузка_Кафедры.Show();
+
+            Form4 form4 = new Form4();
+            form4.Show();
         }
 
         private void button3_Click_1(object sender, EventArgs e)
@@ -123,6 +126,12 @@ namespace Распределение_нагрузки
         {
             Отчет_по_преподавателям отчет_По_Преподавателям = new Отчет_по_преподавателям((int)comboBox1.SelectedValue);
             отчет_По_Преподавателям.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form4 form4 = new Form4();
+            form4.Show();
         }
     }
 }

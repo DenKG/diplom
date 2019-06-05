@@ -96,6 +96,12 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
     <Compile Include="InitialData\Справочники.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,12 @@
     <Compile Include="InitialData\Преподаватели.Designer.cs">
       <DependentUpon>Преподаватели.cs</DependentUpon>
     </Compile>
+    <Compile Include="Дипломники.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Дипломники.Designer.cs">
+      <DependentUpon>Дипломники.cs</DependentUpon>
+    </Compile>
     <Compile Include="КонсультацииАС.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,9 +209,13 @@
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InitialData\Справочники.resx">
       <DependentUpon>Справочники.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoadPivot.rdlc" />
     <EmbeddedResource Include="Report1.rdlc">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -236,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InitialData\Преподаватели.resx">
       <DependentUpon>Преподаватели.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Дипломники.resx">
+      <DependentUpon>Дипломники.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="КонсультацииАС.resx">
       <DependentUpon>КонсультацииАС.cs</DependentUpon>

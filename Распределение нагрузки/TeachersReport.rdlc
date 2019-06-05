@@ -83,6 +83,9 @@
             <TablixColumn>
               <Width>2.5cm</Width>
             </TablixColumn>
+            <TablixColumn>
+              <Width>2.5cm</Width>
+            </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
@@ -741,6 +744,36 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox147</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Руководство Проектир</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1532,6 +1565,36 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Руководство_ПП1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="РуководствоПроектир">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!РуководствоПроектир.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>РуководствоПроектир</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2398,6 +2461,39 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Textbox3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!РуководствоПроектир.Value)</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Yellow</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Textbox177">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -2504,7 +2600,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!Лекции.Value+Fields!Практика.Value+Fields!Практика1.Value+Fields!КП_по_уч_плану.Value+Fields!ПриемКП.Value+Fields!РуководствоКП.Value+Fields!Групповых_конс.Value+Fields!Индивид_конс.Value+Fields!КонсультацииАС.Value+Fields!Проверки_КР.Value+Fields!Занятий_завкаф.Value+Fields!Рецензирование_КР.Value+Fields!РуководствоУП.Value+Fields!Руководство_ПП.Value+Fields!На_зачеты.Value+Fields!НаЭкзамены.Value+Fields!СРС.Value)</Value>
+                              <Value>=Sum(Fields!Лекции.Value+Fields!Практика.Value+Fields!Практика1.Value+Fields!КП_по_уч_плану.Value+Fields!ПриемКП.Value+Fields!РуководствоКП.Value+Fields!Групповых_конс.Value+Fields!Индивид_конс.Value+Fields!КонсультацииАС.Value+Fields!Проверки_КР.Value+Fields!Занятий_завкаф.Value+Fields!Рецензирование_КР.Value+Fields!РуководствоУП.Value+Fields!Руководство_ПП.Value+Fields!На_зачеты.Value+Fields!НаЭкзамены.Value+Fields!СРС.Value+Fields!РуководствоПроектир.Value)</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -2561,6 +2657,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -2579,7 +2676,7 @@
         <DataSetName>DataSet1</DataSetName>
         <Top>3.4925cm</Top>
         <Height>1.8cm</Height>
-        <Width>69.20687cm</Width>
+        <Width>71.70687cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2813,7 +2910,7 @@
     <Height>2.20866in</Height>
     <Style />
   </Body>
-  <Width>27.2468in</Width>
+  <Width>28.23105in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -2939,6 +3036,10 @@
         </Field>
         <Field Name="СРС">
           <DataField>СРС</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="РуководствоПроектир">
+          <DataField>РуководствоПроектир</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>

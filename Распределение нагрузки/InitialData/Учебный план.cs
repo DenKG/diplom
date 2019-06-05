@@ -58,6 +58,7 @@ namespace Распределение_нагрузки
         private void button3_Click(object sender, EventArgs e)
         {
             int semester = 1, preparation = 0, direction = 0, educationForm = 0, stopWhile = 0;
+            int sheet = 1;
             if (бакалаврыRadioButton.Checked == true || дистантникиRadioButton.Checked == true || магистрыRadioButton.Checked == true)
             {
                 if (ПИRB.Checked == true || ИБRB.Checked == true)
@@ -122,417 +123,456 @@ namespace Распределение_нагрузки
                         horizontalEndTable++;
                     } while (dataGridView1.Rows[subjectNameRowNum - 1].Cells[horizontalEndTable].Value.ToString() != "");
 
-                    //Внести Обязательные предметы
-                    do
+                    while (sheet < 3)
                     {
-                        if (dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() == "Итого по обязательным дисциплинам:")
+                        //Внести Обязательные предметы
+                        do
+                        {
+                            semester = 0;
+                            if (i >= dataGridView1.RowCount)
+                            {
+                                break;
+                            }
+                            if (dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() == "Итого по обязательным дисциплинам:")
+                            {
+                                i++;
+                            }
+
+                            if (dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() == "Курсы по выбору студента" || dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() == "Курсы по выбору")
+                            {
+                                //subjectNameRowNum++;
+                                nesessary = 2;
+                                i = i + 1;
+                            }
+
+                            using (var MyConnection = new SqlConnection(Connection.LoadConnectionString))
+                            {
+                                //try
+                                //{
+                                int lection = 0, laboratory = 0, practice = 0;
+                                int auditoryLessonsHours = 0, lectionHoursTotal = 0, LaboratoryHoursTotal = 0, practiceHoursTotal = 0, SRSHoursTotal = 0;
+                                SqlCommand addSubjects = new SqlCommand("ВнестиУчебныйПлан_ХП", MyConnection);
+                                addSubjects.CommandType = CommandType.StoredProcedure;
+
+                                if (dataGridView1.Rows[i].Cells[1].Value.ToString() != "" &&
+                                    dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Учебная практика" &&
+                                    dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Производственная практика" &&
+                                    dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Предквалификационная практика" &&
+                                    dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Физическая культура" &&
+                                    dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Физкультура")
+                                {
+                                    addSubjects.Parameters.AddWithValue("@name", dataGridView1.Rows[i].Cells[1].Value.ToString());
+                                    addSubjects.Parameters.AddWithValue("@departmentName", dataGridView1.Rows[i].Cells[2].Value.ToString());
+                                    addSubjects.Parameters.AddWithValue("@credits", Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value));
+                                    addSubjects.Parameters.AddWithValue("@hours", Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value));
+
+                                    addSubjects.Parameters.AddWithValue("@direction", direction);
+                                    addSubjects.Parameters.AddWithValue("@preparation", preparation);
+
+                                    addSubjects.Parameters.AddWithValue("@educationForm", educationForm);
+
+                                    if (educationForm == 1)
+                                    {
+                                        c = 5;
+                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                        {
+                                            auditoryLessonsHours = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                            c++;
+                                        }
+                                        else
+                                        {
+                                            c++;
+                                        }
+
+                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                        {
+                                            lectionHoursTotal = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                            c++;
+                                        }
+                                        else
+                                        {
+                                            c++;
+                                        }
+
+                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                        {
+                                            LaboratoryHoursTotal = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                            c++;
+                                        }
+                                        else
+                                        {
+                                            c++;
+                                        }
+
+                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                        {
+                                            practiceHoursTotal = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                            c++;
+                                        }
+                                        else
+                                        {
+                                            c++;
+                                        }
+
+                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                        {
+                                            SRSHoursTotal = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                            c++;
+                                        }
+                                        else
+                                        {
+                                            c++;
+                                        }
+
+                                        for (c = 10; c < horizontalEndTable; c++)
+                                        {
+                                            if (c == 13 || c == 17 || c == 21 || c == 25 || c == 29)
+                                            {
+                                                continue;
+                                            }
+
+                                            if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                            {
+                                                lection = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                                c++;
+                                                semester = semesterEF1(c, sheet);
+                                            }
+                                            else
+                                            {
+                                                c++;
+                                            }
+
+                                            if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                            {
+                                                laboratory = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                                c++;
+                                                semester = 0;
+                                                semester = semesterEF1(c, sheet);
+                                            }
+                                            else
+                                            {
+                                                c++;
+                                            }
+
+                                            if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                            {
+                                                practice = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                                semester = 0;
+                                                semester = semesterEF1(c, sheet);
+                                            }
+                                        }
+                                    }
+
+                                    else if (educationForm == 2)
+                                    {
+                                        for (c = 5; c < horizontalEndTable; c++)
+                                        {
+                                            if (c == 8 || c == 12 || c == 16 || c == 20 || c == 24)
+                                            {
+                                                continue;
+                                            }
+                                            if (c == horizontalEndTable)
+                                            {
+                                                break;
+                                            }
+                                            if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                            {
+                                                lection = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                                c++;
+                                                semester = semesterEF2(c, sheet);
+                                            }
+                                            else
+                                            {
+                                                c++;
+                                            }
+                                            if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                            {
+                                                laboratory = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                                c++;
+                                                semester = semesterEF2(c, sheet);
+                                            }
+                                            else
+                                            {
+                                                c++;
+                                            }
+                                            if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                            {
+                                                practice = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                                semester = semesterEF2(c, sheet);
+                                            }
+                                        }
+                                    }
+
+                                    addSubjects.Parameters.AddWithValue("@auditoryLessonsHours", auditoryLessonsHours);
+                                    addSubjects.Parameters.AddWithValue("@lectionHoursTotal", lectionHoursTotal);
+                                    addSubjects.Parameters.AddWithValue("@laboratoryHoursTotal", LaboratoryHoursTotal);
+                                    addSubjects.Parameters.AddWithValue("@praticeHoursTotal", practiceHoursTotal);
+                                    addSubjects.Parameters.AddWithValue("@SRSHoursTotal", SRSHoursTotal);
+
+                                    addSubjects.Parameters.AddWithValue("@lections", lection);
+                                    addSubjects.Parameters.AddWithValue("@laboratory", laboratory);
+                                    addSubjects.Parameters.AddWithValue("@practice", practice);
+                                    addSubjects.Parameters.AddWithValue("@semester", semester);
+                                    addSubjects.Parameters.AddWithValue("@subjectImportance", nesessary);
+
+                                    i++;
+                                    MyConnection.Open();
+                                    addSubjects.ExecuteNonQuery();
+                                }
+                                else
+                                {
+                                    i++;
+                                    if (i >= dataGridView1.RowCount)
+                                    {
+                                        break;
+                                    }
+                                }
+                                //}
+                                //catch (Exception ex)
+                                //{
+                                //    MessageBox.Show(ex.Message);
+                                //}
+                            }
+                        }
+                        while (dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Итого по курсам по выбору:");
+                        /***********************************************************************************/
+
+                        do
                         {
                             i++;
-                        }
-
-                        if (dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() == "Курсы по выбору студента")
-                        {
-                            //subjectNameRowNum++;
-                            nesessary = 2;
-                            i = i + 1;
-                        }
-
-                        using (var MyConnection = new SqlConnection(Connection.LoadConnectionString))
-                        {
-                            //try
-                            //{
-                            int lection = 0, laboratory = 0, practice = 0;
-                            int auditoryLessonsHours = 0, lectionHoursTotal = 0, LaboratoryHoursTotal = 0, practiceHoursTotal = 0, SRSHoursTotal = 0;
-                            SqlCommand addSubjects = new SqlCommand("ВнестиУчебныйПлан_ХП", MyConnection);
-                            addSubjects.CommandType = CommandType.StoredProcedure;
-
-                            if (dataGridView1.Rows[i].Cells[1].Value.ToString() != "" &&
-                                dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Учебная практика" &&
-                                dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Производственная практика" &&
-                                dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Предквалификационная практика" &&
-                                dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Физическая культура")
+                            if (i >= dataGridView1.RowCount)
                             {
-                                addSubjects.Parameters.AddWithValue("@name", dataGridView1.Rows[i].Cells[1].Value.ToString());
-                                addSubjects.Parameters.AddWithValue("@departmentName", dataGridView1.Rows[i].Cells[2].Value.ToString());
-                                addSubjects.Parameters.AddWithValue("@credits", Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value));
-                                addSubjects.Parameters.AddWithValue("@hours", Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value));
-
-                                addSubjects.Parameters.AddWithValue("@direction", direction);
-                                addSubjects.Parameters.AddWithValue("@preparation", preparation);
-
-                                addSubjects.Parameters.AddWithValue("@educationForm", educationForm);
-
-                                if (educationForm == 1)
-                                {
-                                    c = 5;
-                                    if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                    {
-                                        auditoryLessonsHours = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                        c++;
-                                    }
-                                    else
-                                    {
-                                        c++;
-                                    }
-
-                                    if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                    {
-                                        lectionHoursTotal = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                        c++;
-                                    }
-                                    else
-                                    {
-                                        c++;
-                                    }
-
-                                    if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                    {
-                                        LaboratoryHoursTotal = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                        c++;
-                                    }
-                                    else
-                                    {
-                                        c++;
-                                    }
-
-                                    if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                    {
-                                        practiceHoursTotal = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                        c++;
-                                    }
-                                    else
-                                    {
-                                        c++;
-                                    }
-
-                                    if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                    {
-                                        SRSHoursTotal = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                        c++;
-                                    }
-                                    else
-                                    {
-                                        c++;
-                                    }
-
-                                    for (c = 10; c < horizontalEndTable; c++)
-                                    {
-                                        if (c == 13 || c == 17 || c == 21 || c == 25 || c == 29)
-                                        {
-                                            continue;
-                                        }
-
-                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                        {
-                                            lection = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                            c++;
-                                            semester = semesterEF1(c);
-                                        }
-                                        else
-                                        {
-                                            c++;
-                                        }
-
-                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                        {
-                                            laboratory = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                            c++;
-                                            semester = semesterEF1(c);
-                                        }
-                                        else
-                                        {
-                                            c++;
-                                        }
-
-                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                        {
-                                            practice = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                            semester = semesterEF1(c);
-                                        }
-                                    }
-                                }
-
-                                else if (educationForm == 2)
-                                {
-                                    for (c = 5; c < horizontalEndTable; c++)
-                                    {
-                                        if (c == 8 || c == 12 || c == 16 || c == 20 || c == 24)
-                                        {
-                                            continue;
-                                        }
-                                        if (c == horizontalEndTable)
-                                        {
-                                            break;
-                                        }
-                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                        {
-                                            lection = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                            c++;
-                                            semester = semesterEF2(c);
-                                        }
-                                        else
-                                        {
-                                            c++;
-                                        }
-                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                        {
-                                            laboratory = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                            c++;
-                                            semester = semesterEF2(c);
-                                        }
-                                        else
-                                        {
-                                            c++;
-                                        }
-                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                        {
-                                            practice = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                            semester = semesterEF2(c);
-                                        }
-                                    }
-                                }
-                                
-                                addSubjects.Parameters.AddWithValue("@auditoryLessonsHours", auditoryLessonsHours);
-                                addSubjects.Parameters.AddWithValue("@lectionHoursTotal", lectionHoursTotal);
-                                addSubjects.Parameters.AddWithValue("@laboratoryHoursTotal", LaboratoryHoursTotal);
-                                addSubjects.Parameters.AddWithValue("@praticeHoursTotal", practiceHoursTotal);
-                                addSubjects.Parameters.AddWithValue("@SRSHoursTotal", SRSHoursTotal);
-
-                                addSubjects.Parameters.AddWithValue("@lections", lection);
-                                addSubjects.Parameters.AddWithValue("@laboratory", laboratory);
-                                addSubjects.Parameters.AddWithValue("@practice", practice);
-                                addSubjects.Parameters.AddWithValue("@semester", semester);
-                                addSubjects.Parameters.AddWithValue("@subjectImportance", nesessary);
-
-                                i++;
-                                MyConnection.Open();
-                                addSubjects.ExecuteNonQuery();
+                                break;
                             }
-                            else
-                            {
-                                i++;
-                            }
-                            //}
-                            //catch (Exception ex)
-                            //{
-                            //    MessageBox.Show(ex.Message);
-                            //}
-                        }
-                    }
-                    while (dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Итого по курсам по выбору:");
-                    /***********************************************************************************/
-
-                    do
-                    {
+                        } while (dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Факультативы");
                         i++;
-                    } while (dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Факультативы");
-                    i++;
 
-                    do
-                    {
-                        nesessary = 3;
-                        using (var MyConnection = new SqlConnection(Connection.LoadConnectionString))
+                        do
                         {
-                            //try
-                            //{
-                            int lection = 0, laboratory = 0, practice = 0;
-                            int auditoryLessonsHours = 0, lectionHoursTotal = 0, LaboratoryHoursTotal = 0, practiceHoursTotal = 0, SRSHoursTotal = 0;
-                            SqlCommand addSubjects = new SqlCommand("ВнестиУчебныйПлан_ХП", MyConnection);
-                            addSubjects.CommandType = CommandType.StoredProcedure;
-
-                            if (dataGridView1.Rows[i].Cells[1].Value.ToString() != "" &&
-                                dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Учебная практика" &&
-                                dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Производственная практика" &&
-                                dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Предквалификационная практика" &&
-                                dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Физическая культура")
+                            semester = 0;
+                            if (i >= dataGridView1.RowCount)
                             {
-                                //i++;
-                                addSubjects.Parameters.AddWithValue("@name", dataGridView1.Rows[i].Cells[1].Value.ToString());
-                                addSubjects.Parameters.AddWithValue("@departmentName", dataGridView1.Rows[i].Cells[2].Value.ToString());
-                                if (dataGridView1.Rows[i].Cells[3].Value.ToString() != "")
+                                break;
+                            }
+                            nesessary = 3;
+                            using (var MyConnection = new SqlConnection(Connection.LoadConnectionString))
+                            {
+                                //try
+                                //{
+                                int lection = 0, laboratory = 0, practice = 0;
+                                int auditoryLessonsHours = 0, lectionHoursTotal = 0, LaboratoryHoursTotal = 0, practiceHoursTotal = 0, SRSHoursTotal = 0;
+                                SqlCommand addSubjects = new SqlCommand("ВнестиУчебныйПлан_ХП", MyConnection);
+                                addSubjects.CommandType = CommandType.StoredProcedure;
+
+                                if (dataGridView1.Rows[i].Cells[1].Value.ToString() != "" &&
+                                    dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Учебная практика" &&
+                                    dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Производственная практика" &&
+                                    dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Предквалификационная практика" &&
+                                    dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Физическая культура" &&
+                                    dataGridView1.Rows[i].Cells[1].Value.ToString().TrimEnd() != "Физкультура")
                                 {
-                                    addSubjects.Parameters.AddWithValue("@credits", Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value));
+                                    //i++;
+                                    addSubjects.Parameters.AddWithValue("@name", dataGridView1.Rows[i].Cells[1].Value.ToString());
+                                    addSubjects.Parameters.AddWithValue("@departmentName", dataGridView1.Rows[i].Cells[2].Value.ToString());
+                                    if (dataGridView1.Rows[i].Cells[3].Value.ToString() != "")
+                                    {
+                                        addSubjects.Parameters.AddWithValue("@credits", Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value));
+                                    }
+                                    else
+                                    {
+                                        addSubjects.Parameters.AddWithValue("@credits", 0);
+                                    }
+                                    if (dataGridView1.Rows[i].Cells[4].Value.ToString() != "")
+                                    {
+                                        addSubjects.Parameters.AddWithValue("@hours", Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value));
+                                    }
+                                    else
+                                    {
+                                        addSubjects.Parameters.AddWithValue("@hours", 0);
+                                    }
+
+                                    addSubjects.Parameters.AddWithValue("@direction", direction);
+                                    addSubjects.Parameters.AddWithValue("@preparation", preparation);
+
+                                    addSubjects.Parameters.AddWithValue("@educationForm", educationForm);
+
+                                    if (educationForm == 1)
+                                    {
+                                        c = 5;
+                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                        {
+                                            auditoryLessonsHours = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                            c++;
+                                        }
+                                        else
+                                        {
+                                            c++;
+                                        }
+
+                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                        {
+                                            lectionHoursTotal = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                            c++;
+                                        }
+                                        else
+                                        {
+                                            c++;
+                                        }
+
+                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                        {
+                                            LaboratoryHoursTotal = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                            c++;
+                                        }
+                                        else
+                                        {
+                                            c++;
+                                        }
+
+                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                        {
+                                            practiceHoursTotal = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                            c++;
+                                        }
+                                        else
+                                        {
+                                            c++;
+                                        }
+
+                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                        {
+                                            SRSHoursTotal = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                            c++;
+                                        }
+                                        else
+                                        {
+                                            c++;
+                                        }
+
+                                        for (c = 10; c < horizontalEndTable; c++)
+                                        {
+                                            if (c == 13 || c == 17 || c == 21 || c == 25 || c == 29 || c == 24)
+                                            {
+                                                continue;
+                                            }
+
+                                            if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                            {
+                                                lection = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                                c++;
+                                                semester = semesterEF1(c, sheet);
+                                            }
+                                            else
+                                            {
+                                                c++;
+                                            }
+
+                                            if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                            {
+                                                laboratory = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                                c++;
+                                                semester = semesterEF1(c, sheet);
+                                            }
+                                            else
+                                            {
+                                                c++;
+                                            }
+
+                                            if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                            {
+                                                practice = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                                semester = semesterEF1(c, sheet);
+                                            }
+                                        }
+                                    }
+
+                                    else if (educationForm == 2)
+                                    {
+                                        for (c = 5; c < horizontalEndTable; c++)
+                                        {
+                                            if (c == 8 || c == 12 || c == 16 || c == 20 || c == 24)
+                                            {
+                                                continue;
+                                            }
+                                            if (c == horizontalEndTable)
+                                            {
+                                                break;
+                                            }
+                                            if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                            {
+                                                lection = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                                c++;
+                                                semester = semesterEF2(c, sheet);
+                                            }
+                                            else
+                                            {
+                                                c++;
+                                            }
+                                            if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                            {
+                                                laboratory = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                                c++;
+                                                semester = semesterEF2(c, sheet);
+                                            }
+                                            else
+                                            {
+                                                c++;
+                                            }
+                                            if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                            {
+                                                practice = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
+                                                semester = semesterEF2(c, sheet);
+                                            }
+                                        }
+                                    }
+
+                                    addSubjects.Parameters.AddWithValue("@auditoryLessonsHours", auditoryLessonsHours);
+                                    addSubjects.Parameters.AddWithValue("@lectionHoursTotal", lectionHoursTotal);
+                                    addSubjects.Parameters.AddWithValue("@laboratoryHoursTotal", LaboratoryHoursTotal);
+                                    addSubjects.Parameters.AddWithValue("@praticeHoursTotal", practiceHoursTotal);
+                                    addSubjects.Parameters.AddWithValue("@SRSHoursTotal", SRSHoursTotal);
+
+                                    addSubjects.Parameters.AddWithValue("@lections", lection);
+                                    addSubjects.Parameters.AddWithValue("@laboratory", laboratory);
+                                    addSubjects.Parameters.AddWithValue("@practice", practice);
+                                    addSubjects.Parameters.AddWithValue("@semester", semester);
+                                    addSubjects.Parameters.AddWithValue("@subjectImportance", nesessary);
+
+                                    i++;
+                                    MyConnection.Open();
+                                    addSubjects.ExecuteNonQuery();
                                 }
                                 else
                                 {
-                                    addSubjects.Parameters.AddWithValue("@credits", 0);
-                                }
-                                if (dataGridView1.Rows[i].Cells[4].Value.ToString() != "")
-                                {
-                                    addSubjects.Parameters.AddWithValue("@hours", Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value));
-                                }
-                                else
-                                {
-                                    addSubjects.Parameters.AddWithValue("@hours", 0);
-                                }
-
-                                addSubjects.Parameters.AddWithValue("@direction", direction);
-                                addSubjects.Parameters.AddWithValue("@preparation", preparation);
-
-                                addSubjects.Parameters.AddWithValue("@educationForm", educationForm);
-
-                                if (educationForm == 1)
-                                {
-                                    c = 5;
-                                    if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
+                                    i++;
+                                    if (i >= dataGridView1.RowCount)
                                     {
-                                        auditoryLessonsHours = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                        c++;
-                                    }
-                                    else
-                                    {
-                                        c++;
-                                    }
-
-                                    if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                    {
-                                        lectionHoursTotal = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                        c++;
-                                    }
-                                    else
-                                    {
-                                        c++;
-                                    }
-
-                                    if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                    {
-                                        LaboratoryHoursTotal = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                        c++;
-                                    }
-                                    else
-                                    {
-                                        c++;
-                                    }
-
-                                    if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                    {
-                                        practiceHoursTotal = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                        c++;
-                                    }
-                                    else
-                                    {
-                                        c++;
-                                    }
-
-                                    if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                    {
-                                        SRSHoursTotal = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                        c++;
-                                    }
-                                    else
-                                    {
-                                        c++;
-                                    }
-
-                                    for (c = 10; c < horizontalEndTable; c++)
-                                    {
-                                        if (c == 13 || c == 17 || c == 21 || c == 25 || c == 29 || c == 24)
-                                        {
-                                            continue;
-                                        }
-
-                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                        {
-                                            lection = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                            c++;
-                                            semester = semesterEF1(c);
-                                        }
-                                        else
-                                        {
-                                            c++;
-                                        }
-
-                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                        {
-                                            laboratory = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                            c++;
-                                            semester = semesterEF1(c);
-                                        }
-                                        else
-                                        {
-                                            c++;
-                                        }
-
-                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                        {
-                                            practice = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                            semester = semesterEF1(c);
-                                        }
+                                        break;
                                     }
                                 }
-
-                                else if (educationForm == 2)
-                                {
-                                    for (c = 5; c < horizontalEndTable; c++)
-                                    {
-                                        if (c == 8 || c == 12 || c == 16 || c == 20 || c == 24)
-                                        {
-                                            continue;
-                                        }
-                                        if (c == horizontalEndTable)
-                                        {
-                                            break;
-                                        }
-                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                        {
-                                            lection = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                            c++;
-                                            semester = semesterEF2(c);
-                                        }
-                                        else
-                                        {
-                                            c++;
-                                        }
-                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                        {
-                                            laboratory = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                            c++;
-                                            semester = semesterEF2(c);
-                                        }
-                                        else
-                                        {
-                                            c++;
-                                        }
-                                        if (dataGridView1.Rows[i].Cells[c].Value.ToString() != "")
-                                        {
-                                            practice = Convert.ToInt32(numeralOnly(dataGridView1.Rows[i].Cells[c].Value.ToString()));
-                                            semester = semesterEF2(c);
-                                        }
-                                    }
-                                }
-
-                                addSubjects.Parameters.AddWithValue("@auditoryLessonsHours", auditoryLessonsHours);
-                                addSubjects.Parameters.AddWithValue("@lectionHoursTotal", lectionHoursTotal);
-                                addSubjects.Parameters.AddWithValue("@laboratoryHoursTotal", LaboratoryHoursTotal);
-                                addSubjects.Parameters.AddWithValue("@praticeHoursTotal", practiceHoursTotal);
-                                addSubjects.Parameters.AddWithValue("@SRSHoursTotal", SRSHoursTotal);
-
-                                addSubjects.Parameters.AddWithValue("@lections", lection);
-                                addSubjects.Parameters.AddWithValue("@laboratory", laboratory);
-                                addSubjects.Parameters.AddWithValue("@practice", practice);
-                                addSubjects.Parameters.AddWithValue("@semester", semester);
-                                addSubjects.Parameters.AddWithValue("@subjectImportance", nesessary);
-
-                                i++;
-                                MyConnection.Open();
-                                addSubjects.ExecuteNonQuery();
+                                //}
+                                //catch (Exception ex)
+                                //{
+                                //    MessageBox.Show(ex.Message);
+                                //}
                             }
-                            else
+                            if (dataGridView1.Rows[i].Cells[1].Value.ToString() == "Кредитов по учебным модулям" || dataGridView1.Rows[i - 1].Cells[1].Value.ToString() == "Программная инженерия олимпиад")
                             {
-                                i++;
+                                break;
                             }
-                            //}
-                            //catch (Exception ex)
-                            //{
-                            //    MessageBox.Show(ex.Message);
-                            //}
                         }
-                        if(dataGridView1.Rows[i].Cells[1].Value.ToString() == "Кредитов по учебным модулям")
-                        {
-                            break;
-                        }
+                        while (dataGridView1.Rows[i].Cells[1].Value.ToString() != "" || dataGridView1.Rows[i - 1].Cells[1].Value.ToString() != "Программная инженерия олимпиад");
+                        sheet++;
                     }
-                    while (dataGridView1.Rows[i].Cells[1].Value.ToString() != "");
+                    using (var MyConnection = new SqlConnection(Connection.LoadConnectionString))
+                    {
+                        SqlCommand addAcadCur = new SqlCommand("ДополнитьУчебныйПлан_ХП", MyConnection);
+                        addAcadCur.CommandType = CommandType.StoredProcedure;
+
+                        MyConnection.Open();
+                        
+                        addAcadCur.ExecuteNonQuery();
+                    }
                 }
                 else
                 {
@@ -554,26 +594,46 @@ namespace Распределение_нагрузки
             return result;
         }
 
-        private int semesterEF1(int c)
+        private int semesterEF1(int c, int s)
         {
             if (c < 13)
             {
+                if (s == 2)
+                {
+                    return 1 + 4;
+                }
                 return 1;
             }
             else if (c > 13 && c < 17)
             {
+                if (s == 2)
+                {
+                    return 2 + 4;
+                }
                 return 2;
             }
             else if (c > 17 && c < 21)
             {
+                if (s == 2)
+                {
+                    return 3 + 4;
+                }
                 return 3;
             }
             else if (c > 21 && c < 25)
             {
+                if (s == 2)
+                {
+                    return 4 + 4;
+                }
                 return 4;
             }
             else if (c > 25 && c < 29)
             {
+                if (s == 2)
+                {
+                    return 5 + 4;
+                }
                 return 5;
             }
             else
@@ -582,26 +642,46 @@ namespace Распределение_нагрузки
             }
         }
 
-        private int semesterEF2(int c)
+        private int semesterEF2(int c, int s)
         {
             if (c < 8)
             {
+                if (s == 2)
+                {
+                    return 1 + 4;
+                }
                 return 1;
             }
             else if (c > 8 && c < 12)
             {
+                if (s == 2)
+                {
+                    return 2 + 4;
+                }
                 return 2;
             }
             else if (c > 12 && c < 16)
             {
+                if (s == 2)
+                {
+                    return 3 + 4;
+                }
                 return 3;
             }
             else if (c > 16 && c < 20)
             {
+                if (s == 2)
+                {
+                    return 4 + 4;
+                }
                 return 4;
             }
             else if (c > 20 && c < 24)
             {
+                if (s == 2)
+                {
+                    return 5 + 4;
+                }
                 return 5;
             }
             else

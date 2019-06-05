@@ -63,6 +63,9 @@ namespace Распределение_нагрузки
             comboBox1_SelectedIndexChanged(sender, e);
             направлениеComboBox_SelectedIndexChanged(sender, e);
             teacherRateHoursCheck();
+            fillBy1ToolStripButton.PerformClick();
+            видЗанятияComboBox_SelectedIndexChanged(sender, e);
+            //SetVidZanatiya();
         }
 
         public void formRefresh()
@@ -499,6 +502,38 @@ namespace Распределение_нагрузки
                 }
             }
         }
+
+        //private void SetVidZanatiya()
+        //{
+        //    using (var MyConnection = new SqlConnection(Connection.LoadConnectionString))
+        //    {
+        //        DataSet ds = new DataSet();
+        //        try
+        //        {
+        //            //Вызов хранимой процедуры
+        //            SqlCommand subjectsProcedure = new SqlCommand("ВидыЗанятий_ХП", MyConnection);
+        //            subjectsProcedure.CommandType = CommandType.StoredProcedure;
+
+        //            MyConnection.Open();
+        //            subjectsProcedure.ExecuteNonQuery();
+
+        //            DataTable dt = new DataTable();
+        //            dt.Load(subjectsProcedure.ExecuteReader());
+
+        //            видЗанятияComboBox.DataSource = dt;
+        //            видЗанятияComboBox.ValueMember = "ID";
+        //            видЗанятияComboBox.DisplayMember = "Вид_занятия";
+
+        //            //предметыComboBox.DropDownWidth = DropDownWidth(предметыComboBox);
+
+
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            //MessageBox.Show(ex.Message);
+        //        }
+        //    }
+        //}
 
         //int DropDownWidth(ComboBox myCombo)
         //{
@@ -959,9 +994,13 @@ namespace Распределение_нагрузки
 
         private void предметыComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int subjectID, hours = 0, quantity;
+            int subjectID = 0, hours = 0, quantity;
 
-            subjectID = Convert.ToInt32(предметыComboBox.SelectedValue);
+            try
+            {
+                subjectID = Convert.ToInt32(предметыComboBox.SelectedValue);
+            }
+            catch { }
 
             using (var MyConnection = new SqlConnection(Connection.LoadConnectionString))
             {
@@ -1116,6 +1155,64 @@ namespace Распределение_нагрузки
             КонсультацииАС консультацииАС = new КонсультацииАС(teacherID);
             //консультацииАС.Owner = this;
             консультацииАС.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Дипломники дипломники = new Дипломники();
+            дипломники.Show();
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.виды_занятийTableAdapter.FillBy(this.распределениеНагрузкиDataSet1.Виды_занятий);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.виды_занятийTableAdapter.FillBy1(this.распределениеНагрузкиDataSet1.Виды_занятий);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillBy1ToolStripButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.виды_занятийTableAdapter.FillBy1(this.распределениеНагрузкиDataSet1.Виды_занятий);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillBy1ToolStripButton_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                this.виды_занятийTableAdapter.FillBy1(this.распределениеНагрузкиDataSet1.Виды_занятий);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void selectGroups(int course, int language)

@@ -30,32 +30,37 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.ОтчетНагрузкаКафедры_ХПBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ОтчетПоПреподавателю_ХПBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.РаспределениеНагрузкиDataSet = new Распределение_нагрузки.РаспределениеНагрузкиDataSet();
+            this.ОтчетНагрузкаКафедры_ХПBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ОтчетОбщаяНагрузка_ХПBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ОтчетОбщаяНагрузка_ХПTableAdapter = new Распределение_нагрузки.РаспределениеНагрузкиDataSetTableAdapters.ОтчетОбщаяНагрузка_ХПTableAdapter();
             this.ОтчетНагрузкаКафедры_ХПTableAdapter = new Распределение_нагрузки.РаспределениеНагрузкиDataSetTableAdapters.ОтчетНагрузкаКафедры_ХПTableAdapter();
             this.ЭкспортДанныхПреподавателей_ХПBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ЭкспортДанныхПреподавателей_ХПTableAdapter = new Распределение_нагрузки.РаспределениеНагрузкиDataSetTableAdapters.ЭкспортДанныхПреподавателей_ХПTableAdapter();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.ОтчетПоПреподавателю_ХПBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ОтчетПоПреподавателю_ХПTableAdapter = new Распределение_нагрузки.РаспределениеНагрузкиDataSetTableAdapters.ОтчетПоПреподавателю_ХПTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.ОтчетНагрузкаКафедры_ХПBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ОтчетПоПреподавателю_ХПBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.РаспределениеНагрузкиDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ОтчетНагрузкаКафедры_ХПBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ОтчетОбщаяНагрузка_ХПBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ЭкспортДанныхПреподавателей_ХПBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ОтчетПоПреподавателю_ХПBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // ОтчетНагрузкаКафедры_ХПBindingSource
+            // ОтчетПоПреподавателю_ХПBindingSource
             // 
-            this.ОтчетНагрузкаКафедры_ХПBindingSource.DataMember = "ОтчетНагрузкаКафедры_ХП";
-            this.ОтчетНагрузкаКафедры_ХПBindingSource.DataSource = this.РаспределениеНагрузкиDataSet;
+            this.ОтчетПоПреподавателю_ХПBindingSource.DataMember = "ОтчетПоПреподавателю_ХП";
+            this.ОтчетПоПреподавателю_ХПBindingSource.DataSource = this.РаспределениеНагрузкиDataSet;
             // 
             // РаспределениеНагрузкиDataSet
             // 
             this.РаспределениеНагрузкиDataSet.DataSetName = "РаспределениеНагрузкиDataSet";
             this.РаспределениеНагрузкиDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ОтчетНагрузкаКафедры_ХПBindingSource
+            // 
+            this.ОтчетНагрузкаКафедры_ХПBindingSource.DataMember = "ОтчетНагрузкаКафедры_ХП";
+            this.ОтчетНагрузкаКафедры_ХПBindingSource.DataSource = this.РаспределениеНагрузкиDataSet;
             // 
             // ОтчетОбщаяНагрузка_ХПBindingSource
             // 
@@ -94,11 +99,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(776, 426);
             this.reportViewer1.TabIndex = 0;
             // 
-            // ОтчетПоПреподавателю_ХПBindingSource
-            // 
-            this.ОтчетПоПреподавателю_ХПBindingSource.DataMember = "ОтчетПоПреподавателю_ХП";
-            this.ОтчетПоПреподавателю_ХПBindingSource.DataSource = this.РаспределениеНагрузкиDataSet;
-            // 
             // ОтчетПоПреподавателю_ХПTableAdapter
             // 
             this.ОтчетПоПреподавателю_ХПTableAdapter.ClearBeforeFill = true;
@@ -112,11 +112,11 @@
             this.Name = "Отчет_по_преподавателям";
             this.Text = "Отчет_по_преподавателям";
             this.Load += new System.EventHandler(this.Отчет_по_преподавателям_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ОтчетНагрузкаКафедры_ХПBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ОтчетПоПреподавателю_ХПBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.РаспределениеНагрузкиDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ОтчетНагрузкаКафедры_ХПBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ОтчетОбщаяНагрузка_ХПBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ЭкспортДанныхПреподавателей_ХПBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ОтчетПоПреподавателю_ХПBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
