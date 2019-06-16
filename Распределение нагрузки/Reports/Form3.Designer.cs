@@ -30,8 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.ОтчетОбщаяНагрузка_ХПBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ОтчетПоАкадемсоветникам_ХПBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.РаспределениеНагрузкиDataSet = new Распределение_нагрузки.РаспределениеНагрузкиDataSet();
+            this.ОтчетОбщаяНагрузка_ХПBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.преподавательПредметыОтчетХПBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.распределениеНагрузкиDataSet1 = new Распределение_нагрузки.РаспределениеНагрузкиDataSet();
             this.ПреподавательПредметы_ХПBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -44,8 +45,10 @@
             this.преподавательПредметыОтчет_ХПTableAdapter = new Распределение_нагрузки.РаспределениеНагрузкиDataSetTableAdapters.ПреподавательПредметыОтчет_ХПTableAdapter();
             this.ОтчетОбщаяНагрузка_ХПTableAdapter = new Распределение_нагрузки.РаспределениеНагрузкиDataSetTableAdapters.ОтчетОбщаяНагрузка_ХПTableAdapter();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            ((System.ComponentModel.ISupportInitialize)(this.ОтчетОбщаяНагрузка_ХПBindingSource)).BeginInit();
+            this.ОтчетПоАкадемсоветникам_ХПTableAdapter = new Распределение_нагрузки.РаспределениеНагрузкиDataSetTableAdapters.ОтчетПоАкадемсоветникам_ХПTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.ОтчетПоАкадемсоветникам_ХПBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.РаспределениеНагрузкиDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ОтчетОбщаяНагрузка_ХПBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.преподавательПредметыОтчетХПBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.распределениеНагрузкиDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ПреподавательПредметы_ХПBindingSource)).BeginInit();
@@ -54,15 +57,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.преподавательПредметыОтчетХПBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // ОтчетОбщаяНагрузка_ХПBindingSource
+            // ОтчетПоАкадемсоветникам_ХПBindingSource
             // 
-            this.ОтчетОбщаяНагрузка_ХПBindingSource.DataMember = "ОтчетОбщаяНагрузка_ХП";
-            this.ОтчетОбщаяНагрузка_ХПBindingSource.DataSource = this.РаспределениеНагрузкиDataSet;
+            this.ОтчетПоАкадемсоветникам_ХПBindingSource.DataMember = "ОтчетПоАкадемсоветникам_ХП";
+            this.ОтчетПоАкадемсоветникам_ХПBindingSource.DataSource = this.РаспределениеНагрузкиDataSet;
             // 
             // РаспределениеНагрузкиDataSet
             // 
             this.РаспределениеНагрузкиDataSet.DataSetName = "РаспределениеНагрузкиDataSet";
             this.РаспределениеНагрузкиDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ОтчетОбщаяНагрузка_ХПBindingSource
+            // 
+            this.ОтчетОбщаяНагрузка_ХПBindingSource.DataMember = "ОтчетОбщаяНагрузка_ХП";
+            this.ОтчетОбщаяНагрузка_ХПBindingSource.DataSource = this.РаспределениеНагрузкиDataSet;
             // 
             // преподавательПредметыОтчетХПBindingSource1
             // 
@@ -120,14 +128,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.ОтчетОбщаяНагрузка_ХПBindingSource;
+            reportDataSource1.Value = this.ОтчетПоАкадемсоветникам_ХПBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Распределение_нагрузки.Общая нагрузка.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Распределение_нагрузки.АкадемсоветникиОтчет.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 12);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(776, 426);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // ОтчетПоАкадемсоветникам_ХПTableAdapter
+            // 
+            this.ОтчетПоАкадемсоветникам_ХПTableAdapter.ClearBeforeFill = true;
             // 
             // общийОтчетForm
             // 
@@ -136,10 +148,11 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "общийОтчетForm";
-            this.Text = "Общий отчет";
+            this.Text = "Академсоветники";
             this.Load += new System.EventHandler(this.Form3_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ОтчетОбщаяНагрузка_ХПBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ОтчетПоАкадемсоветникам_ХПBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.РаспределениеНагрузкиDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ОтчетОбщаяНагрузка_ХПBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.преподавательПредметыОтчетХПBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.распределениеНагрузкиDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ПреподавательПредметы_ХПBindingSource)).EndInit();
@@ -165,5 +178,7 @@
         private System.Windows.Forms.BindingSource ОтчетОбщаяНагрузка_ХПBindingSource;
         private РаспределениеНагрузкиDataSetTableAdapters.ОтчетОбщаяНагрузка_ХПTableAdapter ОтчетОбщаяНагрузка_ХПTableAdapter;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource ОтчетПоАкадемсоветникам_ХПBindingSource;
+        private РаспределениеНагрузкиDataSetTableAdapters.ОтчетПоАкадемсоветникам_ХПTableAdapter ОтчетПоАкадемсоветникам_ХПTableAdapter;
     }
 }

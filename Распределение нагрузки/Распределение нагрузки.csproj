@@ -105,22 +105,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
-    <Compile Include="Form2.cs">
+    <Compile Include="Reports\Form2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
+    <Compile Include="Reports\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="Reports\Form3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
+    <Compile Include="Reports\Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
+    <Compile Include="Reports\Form4.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.cs">
+    <Compile Include="Reports\Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
     <Compile Include="InitialData\Справочники.cs">
@@ -130,10 +130,10 @@
       <DependentUpon>Справочники.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="Бакалавры.cs">
+    <Compile Include="Reports\Бакалавры.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Бакалавры.Designer.cs">
+    <Compile Include="Reports\Бакалавры.Designer.cs">
       <DependentUpon>Бакалавры.cs</DependentUpon>
     </Compile>
     <Compile Include="Главная форма.cs">
@@ -174,34 +174,34 @@
     <Compile Include="InitialData\Преподаватели.Designer.cs">
       <DependentUpon>Преподаватели.cs</DependentUpon>
     </Compile>
-    <Compile Include="Дипломники.cs">
+    <Compile Include="InitialData\Дипломники.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Дипломники.Designer.cs">
+    <Compile Include="InitialData\Дипломники.Designer.cs">
       <DependentUpon>Дипломники.cs</DependentUpon>
     </Compile>
-    <Compile Include="КонсультацииАС.cs">
+    <Compile Include="InitialData\КонсультацииАС.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="КонсультацииАС.Designer.cs">
+    <Compile Include="InitialData\КонсультацииАС.Designer.cs">
       <DependentUpon>КонсультацииАС.cs</DependentUpon>
     </Compile>
-    <Compile Include="Нагрузка кафедры.cs">
+    <Compile Include="Reports\Нагрузка кафедры.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Нагрузка кафедры.Designer.cs">
+    <Compile Include="Reports\Нагрузка кафедры.Designer.cs">
       <DependentUpon>Нагрузка кафедры.cs</DependentUpon>
     </Compile>
-    <Compile Include="Отчет по преподавателям.cs">
+    <Compile Include="Reports\Отчет по преподавателям.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Отчет по преподавателям.Designer.cs">
+    <Compile Include="Reports\Отчет по преподавателям.Designer.cs">
       <DependentUpon>Отчет по преподавателям.cs</DependentUpon>
     </Compile>
-    <Compile Include="Преподаватели для лабораторных.cs">
+    <Compile Include="InitialData\Преподаватели для лабораторных.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Преподаватели для лабораторных.Designer.cs">
+    <Compile Include="InitialData\Преподаватели для лабораторных.Designer.cs">
       <DependentUpon>Преподаватели для лабораторных.cs</DependentUpon>
     </Compile>
     <Compile Include="РаспределениеНагрузкиDataSet.cs">
@@ -224,26 +224,27 @@
     <Compile Include="Экспорт в Excel.Designer.cs">
       <DependentUpon>Экспорт в Excel.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form2.resx">
+    <EmbeddedResource Include="Reports\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
+    <EmbeddedResource Include="Reports\Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
+    <EmbeddedResource Include="Reports\Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InitialData\Справочники.resx">
       <DependentUpon>Справочники.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoadPivot.rdlc" />
-    <EmbeddedResource Include="Report1.rdlc">
+    <EmbeddedResource Include="Reports\LoadPivot.rdlc" />
+    <EmbeddedResource Include="Reports\Report1.rdlc">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report2.rdlc" />
-    <EmbeddedResource Include="TeachersReport.rdlc" />
-    <EmbeddedResource Include="Бакалавры.rdlc" />
-    <EmbeddedResource Include="Бакалавры.resx">
+    <EmbeddedResource Include="Reports\Report2.rdlc" />
+    <EmbeddedResource Include="Reports\TeachersReport.rdlc" />
+    <EmbeddedResource Include="Reports\АкадемсоветникиОтчет.rdlc" />
+    <EmbeddedResource Include="Reports\Бакалавры.rdlc" />
+    <EmbeddedResource Include="Reports\Бакалавры.resx">
       <DependentUpon>Бакалавры.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Главная форма.resx">
@@ -274,24 +275,24 @@
     <EmbeddedResource Include="InitialData\Преподаватели.resx">
       <DependentUpon>Преподаватели.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Дипломники.resx">
+    <EmbeddedResource Include="InitialData\Дипломники.resx">
       <DependentUpon>Дипломники.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="КонсультацииАС.resx">
+    <EmbeddedResource Include="InitialData\КонсультацииАС.resx">
       <DependentUpon>КонсультацииАС.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Нагрузка кафедры.resx">
+    <EmbeddedResource Include="Reports\Нагрузка кафедры.resx">
       <DependentUpon>Нагрузка кафедры.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="НагрузкаКафедры.rdlc" />
-    <EmbeddedResource Include="Общая нагрузка.rdlc" />
-    <EmbeddedResource Include="Отчет по преподавателю.rdlc">
+    <EmbeddedResource Include="Reports\НагрузкаКафедры.rdlc" />
+    <EmbeddedResource Include="Reports\Общая нагрузка.rdlc" />
+    <EmbeddedResource Include="Reports\Отчет по преподавателю.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Отчет по преподавателям.resx">
+    <EmbeddedResource Include="Reports\Отчет по преподавателям.resx">
       <DependentUpon>Отчет по преподавателям.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Преподаватели для лабораторных.resx">
+    <EmbeddedResource Include="InitialData\Преподаватели для лабораторных.resx">
       <DependentUpon>Преподаватели для лабораторных.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Часы преподавателей.resx">

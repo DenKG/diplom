@@ -491,10 +491,6 @@ namespace Распределение_нагрузки
                     предметыComboBox.DataSource = dt;
                     предметыComboBox.ValueMember = "ID";
                     предметыComboBox.DisplayMember = "Название";
-
-                    //предметыComboBox.DropDownWidth = DropDownWidth(предметыComboBox);
-
-
                 }
                 catch (Exception ex)
                 {
@@ -502,52 +498,6 @@ namespace Распределение_нагрузки
                 }
             }
         }
-
-        //private void SetVidZanatiya()
-        //{
-        //    using (var MyConnection = new SqlConnection(Connection.LoadConnectionString))
-        //    {
-        //        DataSet ds = new DataSet();
-        //        try
-        //        {
-        //            //Вызов хранимой процедуры
-        //            SqlCommand subjectsProcedure = new SqlCommand("ВидыЗанятий_ХП", MyConnection);
-        //            subjectsProcedure.CommandType = CommandType.StoredProcedure;
-
-        //            MyConnection.Open();
-        //            subjectsProcedure.ExecuteNonQuery();
-
-        //            DataTable dt = new DataTable();
-        //            dt.Load(subjectsProcedure.ExecuteReader());
-
-        //            видЗанятияComboBox.DataSource = dt;
-        //            видЗанятияComboBox.ValueMember = "ID";
-        //            видЗанятияComboBox.DisplayMember = "Вид_занятия";
-
-        //            //предметыComboBox.DropDownWidth = DropDownWidth(предметыComboBox);
-
-
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            //MessageBox.Show(ex.Message);
-        //        }
-        //    }
-        //}
-
-        //int DropDownWidth(ComboBox myCombo)
-        //{
-        //    int maxWidth = 0, temp = 0;
-        //    foreach (var obj in myCombo.Items)
-        //    {
-        //        temp = TextRenderer.MeasureText(obj.ToString(), myCombo.Font).Width;
-        //        if (temp > maxWidth)
-        //        {
-        //            maxWidth = temp;
-        //        }
-        //    }
-        //    return maxWidth;
-        //}
 
         private void предметыComboBox_DropDown(object sender, EventArgs e)
         {
@@ -974,17 +924,7 @@ namespace Распределение_нагрузки
             RefreshTable(teacherID);
             UpdateSubjectComboBox();
             видЗанятияComboBox_SelectedIndexChanged(sender, e);
-            //if (семестрComboBox.SelectedIndex == 0)
-            //{
-            //    checkBox1.Enabled = false;
-            //    checkBox2.Enabled = false;
-            //    checkBox4.Enabled = false;
-            //    checkBox5.Enabled = false;
-            //    checkBox6.Enabled = false;
-            //    checkBox7.Enabled = false;
-            //    checkBox8.Enabled = false;
-            //    checkBox9.Enabled = false;
-            //}
+
         }
 
         private void важностьComboBox_SelectedIndexChanged(object sender, EventArgs e)
