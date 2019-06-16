@@ -550,6 +550,11 @@ namespace Распределение_нагрузки
                                         break;
                                     }
                                 }
+
+                                if (i >= dataGridView1.RowCount)
+                                {
+                                    break;
+                                }
                                 //}
                                 //catch (Exception ex)
                                 //{

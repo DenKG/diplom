@@ -47,6 +47,7 @@
             this.всепреподавателипоказатьХПBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.все_преподаватели_показать_ХПTableAdapter = new Распределение_нагрузки.РаспределениеНагрузкиDataSetTableAdapters.Все_преподаватели_показать_ХПTableAdapter();
             this.всеПреподаватели_ХПTableAdapter = new Распределение_нагрузки.РаспределениеНагрузкиDataSetTableAdapters.ВсеПреподаватели_ХПTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -114,7 +115,7 @@
             this.общаяНагрузкаButton.Name = "общаяНагрузкаButton";
             this.общаяНагрузкаButton.Size = new System.Drawing.Size(216, 23);
             this.общаяНагрузкаButton.TabIndex = 4;
-            this.общаяНагрузкаButton.Text = "Общая нагрузка";
+            this.общаяНагрузкаButton.Text = "Академсоветники";
             this.общаяНагрузкаButton.UseVisualStyleBackColor = true;
             this.общаяНагрузкаButton.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -205,11 +206,22 @@
             // 
             this.всеПреподаватели_ХПTableAdapter.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 323);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(228, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Пересчитать нагрузку кафедры";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_2);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(249, 323);
+            this.ClientSize = new System.Drawing.Size(249, 354);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.учебныйПланButton);
@@ -253,6 +265,7 @@
         private System.Windows.Forms.BindingSource всеПреподавателиХПBindingSource;
         private РаспределениеНагрузкиDataSetTableAdapters.ВсеПреподаватели_ХПTableAdapter всеПреподаватели_ХПTableAdapter;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button1;
     }
 }
 

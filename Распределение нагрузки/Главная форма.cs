@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -132,6 +133,27 @@ namespace Распределение_нагрузки
         {
             Form4 form4 = new Form4();
             form4.Show();
+        }
+
+        private void Button1_Click_2(object sender, EventArgs e)
+        {
+            using (var MyConnection = new SqlConnection(Connection.LoadConnectionString))
+            {
+                try
+                {
+                    SqlCommand flowsAvailable = new SqlCommand("РасчетНагрузкиКафедры_ХП", MyConnection);
+                    flowsAvailable.CommandType = CommandType.StoredProcedure;
+
+                    MyConnection.Open();
+                    flowsAvailable.ExecuteNonQuery();
+
+                    MessageBox.Show("Нагрузка кафедры рассчитана");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
